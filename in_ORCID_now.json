@@ -1,0 +1,134 @@
+[
+  {
+    "title": "Characterizing random complex biological media by quantifying ultrasound multiple scattering",
+    "year": 2025,
+    "doi": "10.3389/facou.2025.1545057",
+    "journal": "Frontiers in Acoustics, 3, 1545057"
+  },
+  {
+    "title": "Design Optimization and Tradeoff Analysis of an Actuated Continuum Probe for Pulmonary Nodule Localization and Resection",
+    "year": 2024,
+    "doi": "10.3390/bioengineering11050417",
+    "journal": "Bioengineering, 11(5), 417"
+  },
+  {
+    "title": "High-performance PMN-PT single-crystal-based 1-3 composite transducer integrated with a biopsy needle",
+    "year": 2024,
+    "doi": "10.3390/bios14020074",
+    "journal": "Biosensors, 14(2), 74"
+  },
+  {
+    "title": "Lung quantitative ultrasound to stage and monitor interstitial lung diseases",
+    "year": 2024,
+    "doi": "10.1038/s41598-024-66632-1",
+    "journal": "Scientific Reports, 14(1), 16350"
+  },
+  {
+    "title": "The respective and dependent effects of scattering and bone matrix absorption on ultrasound attenuation in cortical bone",
+    "year": 2024,
+    "doi": "10.1088/1361-6560/ad43e2",
+    "journal": "Physics in Medicine & Biology, 69(11), 115018"
+  },
+  {
+    "title": "Ultrasound characterization of cortical bone using Shannon entropy",
+    "year": 2023,
+    "doi": "10.1016/j.ultrasmedbio.2023.04.006",
+    "journal": "Ultrasound in Medicine & Biology, 49(8), 1824\u20131829"
+  },
+  {
+    "title": "Using ultrasonic attenuation in cortical bone to infer distributions on pore size",
+    "year": 2022,
+    "doi": "10.1016/j.apm.2022.02.028",
+    "journal": "Applied Mathematical Modelling, 109, 819\u2013832"
+  },
+  {
+    "title": "Estimation of Thickness and Speed of Sound for Transverse Cortical Bone Imaging Using Phase Aberration Correction Methods: An In Silico and Ex Vivo Validation Study",
+    "year": 2022,
+    "doi": "10.3390/app12105283",
+    "journal": "Applied Sciences, 12(10), 5283"
+  },
+  {
+    "title": "Introduction to the special issue on lung ultrasound",
+    "year": 2021,
+    "doi": "10.1121/10.0007490",
+    "journal": "The Journal of the Acoustical Society of America, 150(6), 4151\u20134154"
+  },
+  {
+    "title": "Detecting pulmonary nodules by using ultrasound multiple scattering",
+    "year": 2021,
+    "doi": "10.1121/10.0007283",
+    "journal": "The Journal of the Acoustical Society of America, 150(6), 4095\u20134102"
+  },
+  {
+    "title": "Investigating training-test data splitting strategies for automated segmentation and scoring of COVID-19 lung ultrasound images",
+    "year": 2021,
+    "doi": "10.1121/10.0007293",
+    "journal": "The Journal of the Acoustical Society of America, 150(6), 4118\u20134127"
+  },
+  {
+    "title": "Ultrasound Imaging: A Silent Hero in COVID-19 and Lung Diagnostics",
+    "year": 2020,
+    "doi": "10.1109/tuffc.2020.3031023",
+    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(11), 2194\u20132196"
+  },
+  {
+    "title": "In Vivo Assessment of Pulmonary Fibrosis and Pulmonary Edema in Rodents Using Ultrasound Multiple Scattering",
+    "year": 2020,
+    "doi": "10.1109/tuffc.2020.2989505",
+    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(11), 2274\u20132280"
+  },
+  {
+    "title": "Lung Ultrasound for Treatment of Patients With COVID-19: Please Report Your Settings and Mechanical Index",
+    "year": 2020,
+    "doi": "10.1002/jum.15486",
+    "journal": "Journal of Ultrasound in Medicine"
+  },
+  {
+    "title": "Lesion Imaging and Target detection in Multiple Scattering (LITMUS) Media",
+    "year": 2020,
+    "doi": "10.1109/tuffc.2020.3013895",
+    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
+  },
+  {
+    "title": "Ultrasound Enhanced Synthetic Platelet Therapy for Augmented Wound Repair",
+    "year": 2020,
+    "doi": "10.1021/acsbiomaterials.0c00222",
+    "journal": "ACS Biomaterials Science & Engineering, 6(5), 3026\u20133036"
+  },
+  {
+    "title": "Lung ultrasound imaging, a technical review",
+    "year": 2020,
+    "doi": "10.3390/app10020462",
+    "journal": "Applied Sciences, 10(2), 462"
+  },
+  {
+    "title": "Acoustic diffusion constant of cortical bone: Numerical simulation study of the effect of pore size and pore density on multiple scattering",
+    "year": 2019,
+    "doi": "10.1121/1.5120183",
+    "journal": "The Journal of the Acoustical Society of America, 146(2), 1015\u20131023 (Featured on Cover)"
+  },
+  {
+    "title": "Modeling Ultrasound Attenuation in Porous Structures with Mono-disperse Random Pore Distributions using the Independent Scattering Approximation: A 2D simulation study",
+    "year": 2019,
+    "doi": "10.1088/1361-6560/ab47cb",
+    "journal": "Physics in Medicine & Biology"
+  },
+  {
+    "title": "Ultrasound multiple scattering with microbubbles can differentiate between tumor and healthy tissue in vivo",
+    "year": 2019,
+    "doi": "10.1088/1361-6560/ab549f",
+    "journal": "Physics in Medicine & Biology, 64(24), 245012"
+  },
+  {
+    "title": "The effect of pore size and density on ultrasonic attenuation in porous structures with mono-disperse random pore distribution: A two-dimensional in-silico study",
+    "year": 2018,
+    "doi": "10.1121/1.5049580",
+    "journal": "The Journal of the Acoustical Society of America, 144(2), 709\u2013719"
+  },
+  {
+    "title": "1-Dimensional quantitative micro-architecture mapping of multiple scattering media using backscattering of ultrasound in the near-field: Application to nodule imaging in the lungs",
+    "year": 2018,
+    "doi": "10.1063/1.5037130",
+    "journal": "Applied Physics Letters, 113(3), 033704"
+  }
+]
