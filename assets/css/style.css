@@ -614,7 +614,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 @media (max-width: 760px) {
-  .nav-toggle { display: inline-block; }
+  .nav-toggle { display: none; }
   .nav-links {
     position: absolute;
     top: 100%;
