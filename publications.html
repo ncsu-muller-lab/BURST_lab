@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Publications — BURST Lab</title>
-  <meta name="description" content="Selected journal publications and conference papers from the Biomedical Ultrasound Research for Structural Tissue Characterization Lab at NC State." />
+  <meta name="description" content="Peer-reviewed journal publications, conference proceedings, and patents from the BURST Lab at NC State." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,35 +12,24 @@
 
   <link rel="stylesheet" href="./assets/css/style.css" />
   <style>
-    .pub-year-heading {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--ink);
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.35rem;
-      margin: 2.5rem 0 1.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
     .pub-list {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 2rem 0 0;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.15rem;
     }
     .pub-item {
       background: var(--bg-card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 1.25rem 1.5rem;
+      padding: 1.35rem 1.65rem;
       box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
     }
     .pub-item:hover {
       transform: translateY(-2px);
@@ -48,10 +37,10 @@
       border-color: #cbd5e1;
     }
     .pub-title {
-      font-size: 1.05rem;
+      font-size: 1.08rem;
       font-weight: 600;
       color: var(--ink);
-      line-height: 1.35;
+      line-height: 1.38;
     }
     .pub-authors {
       font-size: 0.92rem;
@@ -68,12 +57,25 @@
     }
     .pub-links {
       display: flex;
-      gap: 0.75rem;
-      margin-top: 0.35rem;
+      align-items: center;
+      gap: 0.85rem;
+      margin-top: 0.4rem;
       font-family: var(--font-mono);
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+    }
+    .pub-year-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      font-weight: 700;
+      color: var(--ink-muted);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 1px 7px;
+      border-radius: 3px;
     }
     .pub-badge {
       display: inline-block;
@@ -86,8 +88,6 @@
       border: 1px solid var(--accent-border);
       padding: 1px 6px;
       border-radius: 3px;
-      margin-right: 0.5rem;
-      vertical-align: middle;
       font-weight: 600;
     }
   </style>
@@ -104,7 +104,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="people.html">People</a></li>
-        <li><a href="news.html">News &amp; Updates</a></li>        
+        <li><a href="news.html">News &amp; Updates</a></li>
         <li><a class="active" href="publications.html">Publications</a></li>
         <li><a href="courses.html">Courses</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -118,151 +118,195 @@
       <div class="wrap">
         <span class="eyebrow">Research Output</span>
         <h1>Publications.</h1>
-        <p>Peer-reviewed journal articles, conference proceedings, and patents from the lab. For complete citation indices and metrics, see <a href="https://scholar.google.com/citations?user=9_iPoNoAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar ↗</a>.</p>
+        <p>
+          Peer-reviewed journal articles, conference papers, and guidelines from our lab, sorted with the latest research first. You can also view verified citation records on <a href="https://orcid.org/0000-0002-5662-0650" target="_blank" rel="noopener">ORCID (0000-0002-5662-0650) ↗</a> and <a href="https://scholar.google.com/citations?user=9_iPoNoAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar ↗</a>.
+        </p>
       </div>
     </header>
 
     <section class="section">
       <div class="wrap">
 
-        <!-- 2026 -->
-        <div class="pub-year-heading">
-          <span>2026</span>
-        </div>
         <ul class="pub-list">
+
+          <!-- 2026: Vessel Density -->
+          <li class="pub-item">
+            <div class="pub-title">Quantitative Ultrasound Characterization of Vessel Density: Effects of Microbubble Concentration</div>
+            <div class="pub-authors">Sarah E. Shelton, Paul A. Dayton, and <b>Marie Muller</b></div>
+            <div class="pub-journal">The Journal of the Acoustical Society of America (JASA), 2026</div>
+            <div class="pub-links">
+              <span class="pub-year-badge">2026</span>
+              <span class="pub-badge">Journal</span>
+            </div>
+          </li>
+
+          <!-- 2026: Cortical Bone Harmonization -->
           <li class="pub-item">
             <div class="pub-title">Towards Harmonizing Ultrasound-Based Cortical Bone Characterization: A Comparison of Attenuation Measurement Techniques</div>
             <div class="pub-authors">Austin McCandless, Kay Raum, and <b>Marie Muller</b></div>
             <div class="pub-journal">The Journal of the Acoustical Society of America (JASA), In Press, 2026</div>
             <div class="pub-links">
+              <span class="pub-year-badge">2026</span>
               <span class="pub-badge">Journal</span>
             </div>
           </li>
-        </ul>
 
-        <!-- 2025 -->
-        <div class="pub-year-heading">
-          <span>2025</span>
-        </div>
-        <ul class="pub-list">
+          <!-- 2025: Characterizing Random Complex Media -->
+          <li class="pub-item">
+            <div class="pub-title">Characterizing Random Complex Biological Media by Quantifying Ultrasound Multiple Scattering</div>
+            <div class="pub-authors">Omid Yousefian, Azadeh Dashti, H. Geithner, Yasamin Karbalaeisadegh, S. Yao, J. Blackwell, and <b>Marie Muller</b></div>
+            <div class="pub-journal">Frontiers in Acoustics (Ultrasound Technologies), 3, 1545057, 2025</div>
+            <div class="pub-links">
+              <span class="pub-year-badge">2025</span>
+              <span class="pub-badge">Journal</span>
+              <a href="https://doi.org/10.3389/facou.2025.1545057" target="_blank" rel="noopener">DOI ↗</a>
+            </div>
+          </li>
+
+          <!-- 2025: Therapeutic Ultrasound Guidelines -->
           <li class="pub-item">
             <div class="pub-title">Overview of Therapeutic Ultrasound Applications and Safety Considerations: 2024 Update</div>
             <div class="pub-authors">Collaborative Working Group and <b>Marie Muller</b></div>
             <div class="pub-journal">Journal of Ultrasound in Medicine, 44(3), 381–433, 2025</div>
             <div class="pub-links">
+              <span class="pub-year-badge">2025</span>
               <span class="pub-badge">Guideline / Review</span>
               <a href="https://doi.org/10.1002/jum.16630" target="_blank" rel="noopener">DOI ↗</a>
             </div>
           </li>
-        </ul>
 
-        <!-- 2023 -->
-        <div class="pub-year-heading">
-          <span>2023</span>
-        </div>
-        <ul class="pub-list">
+          <!-- 2025: Angiogenesis & Microbubble-Enhanced Scattering -->
+          <li class="pub-item">
+            <div class="pub-title">Characterization of Tumor Angiogenesis Using Quantitative Ultrasound and Microbubble-Enhanced Scattering</div>
+            <div class="pub-authors">Parniyan Norouzzadeh, François Legrand, Jadyn Cook, Paul A. Dayton, and <b>Marie Muller</b></div>
+            <div class="pub-journal">The Journal of the Acoustical Society of America (JASA), 158(4_Supplement), A110, 2025</div>
+            <div class="pub-links">
+              <span class="pub-year-badge">2025</span>
+              <span class="pub-badge">Conference / Abstract</span>
+              <a href="https://doi.org/10.1121/10.0040292" target="_blank" rel="noopener">DOI ↗</a>
+            </div>
+          </li>
+
+          <!-- 2024: Lung QUS ILD -->
+          <li class="pub-item">
+            <div class="pub-title">Lung Quantitative Ultrasound to Stage and Monitor Interstitial Lung Diseases</div>
+            <div class="pub-authors">Azadeh Dashti, Roshan Roshankhah, J. Mamou, and <b>Marie Muller</b></div>
+            <div class="pub-journal">Nature Scientific Reports / Research Square, 2024</div>
+            <div class="pub-links">
+              <span class="pub-year-badge">2024</span>
+              <span class="pub-badge">Journal</span>
+              <a href="https://doi.org/10.21203/rs.3.rs-4148411/v1" target="_blank" rel="noopener">DOI ↗</a>
+            </div>
+          </li>
+
+          <!-- 2023: International Lung Ultrasound Guidelines -->
           <li class="pub-item">
             <div class="pub-title">New International Guidelines and Consensus on the Use of Lung Ultrasound</div>
             <div class="pub-authors">International Lung Ultrasound Consensus Panel and <b>Marie Muller</b></div>
             <div class="pub-journal">Journal of Ultrasound in Medicine, 42(2), 309–344, 2023</div>
             <div class="pub-links">
-              <span class="pub-badge">Journal</span>
+              <span class="pub-year-badge">2023</span>
+              <span class="pub-badge">Consensus Guideline</span>
               <a href="https://doi.org/10.1002/jum.16088" target="_blank" rel="noopener">DOI ↗</a>
             </div>
           </li>
+
+          <!-- 2023: Transcranial Focused Ultrasound -->
           <li class="pub-item">
             <div class="pub-title">Numerical and Experimental Evaluation of Low-Intensity Transcranial Focused Ultrasound Wave Propagation Using Human Skulls for Brain Neuromodulation</div>
             <div class="pub-authors">M. Chen, C. Peng, H. Wu, C.-C. Huang, T. Kim, Z. Traylor, <b>Marie Muller</b>, et al.</div>
             <div class="pub-journal">Medical Physics, 50(1), 38–49, 2023</div>
             <div class="pub-links">
+              <span class="pub-year-badge">2023</span>
               <span class="pub-badge">Journal</span>
               <a href="https://doi.org/10.1002/mp.16043" target="_blank" rel="noopener">DOI ↗</a>
             </div>
           </li>
-        </ul>
 
-        <!-- 2022 -->
-        <div class="pub-year-heading">
-          <span>2022</span>
-        </div>
-        <ul class="pub-list">
+          <!-- 2022: Cortical Bone Attenuation Pore Size -->
           <li class="pub-item">
             <div class="pub-title">Using Ultrasonic Attenuation in Cortical Bone to Infer Distributions on Pore Size</div>
             <div class="pub-authors">Q. Grimal, <b>Marie Muller</b>, and K. Bekele-Maxwell</div>
             <div class="pub-journal">Applied Mathematical Modelling, 107, 342–356, 2022</div>
             <div class="pub-links">
+              <span class="pub-year-badge">2022</span>
               <span class="pub-badge">Journal</span>
               <a href="https://doi.org/10.1016/j.apm.2022.02.028" target="_blank" rel="noopener">DOI ↗</a>
             </div>
           </li>
-        </ul>
 
-        <!-- 2021 -->
-        <div class="pub-year-heading">
-          <span>2021</span>
-        </div>
-        <ul class="pub-list">
+          <!-- 2021: Inferring Pore Radius -->
           <li class="pub-item">
             <div class="pub-title">Inferring Pore Radius and Density from Ultrasonic Attenuation Using Physics-Based Modeling</div>
             <div class="pub-authors">Rebekah White, Omid Yousefian, H.T. Banks, Alen Alexanderian, and <b>Marie Muller</b></div>
             <div class="pub-journal">The Journal of the Acoustical Society of America, 149(3), 1709–1720, 2021</div>
             <div class="pub-links">
+              <span class="pub-year-badge">2021</span>
               <span class="pub-badge">Journal</span>
               <a href="https://doi.org/10.1121/10.0003632" target="_blank" rel="noopener">DOI ↗</a>
             </div>
           </li>
-        </ul>
 
-        <!-- 2020 & Earlier Highlights -->
-        <div class="pub-year-heading">
-          <span>2020 &amp; Earlier Selected Papers</span>
-        </div>
-        <ul class="pub-list">
+          <!-- 2020: Porous Titanium Anisotropy -->
           <li class="pub-item">
             <div class="pub-title">Evaluation of Structural Anisotropy in a Porous Titanium Medium</div>
-            <div class="pub-authors">O. Yousefian, R. Roshankhah, and <b>Marie Muller</b></div>
+            <div class="pub-authors">Omid Yousefian, Roshan Roshankhah, and <b>Marie Muller</b></div>
             <div class="pub-journal">IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(5), 1017–1024, 2020</div>
             <div class="pub-links">
+              <span class="pub-year-badge">2020</span>
               <span class="pub-badge">Journal</span>
               <a href="https://doi.org/10.1109/TUFFC.2019.2963162" target="_blank" rel="noopener">DOI ↗</a>
             </div>
           </li>
+
+          <!-- 2019: ANN Bone Microarchitecture -->
           <li class="pub-item">
             <div class="pub-title">Artificial Neural Network to Estimate Micro-Architectural Properties of Cortical Bone Using Ultrasonic Attenuation: A 2-D Numerical Study</div>
             <div class="pub-authors">Kaustav Mohanty, Omid Yousefian, Yasamin Karbalaeisadegh, Micah Ulrich, Q. Grimal, and <b>Marie Muller</b></div>
             <div class="pub-journal">Computers in Biology and Medicine, 114, 103457, 2019</div>
             <div class="pub-links">
+              <span class="pub-year-badge">2019</span>
               <span class="pub-badge">Journal</span>
               <a href="https://doi.org/10.1016/j.compbiomed.2019.103457" target="_blank" rel="noopener">DOI ↗</a>
             </div>
           </li>
+
+          <!-- 2018: Microgel Deformations -->
           <li class="pub-item">
             <div class="pub-title">Study of Poly (N-isopropylacrylamide-co-acrylic acid) Microgel Particle Induced Deformations of Tissue Mimicking Phantom by Ultrasound Stimulation</div>
             <div class="pub-authors">A. Joshi, S. Nandi, D. Chester, Ashley C. Brown, and <b>Marie Muller</b></div>
             <div class="pub-journal">Langmuir, 34(4), 1457–1465, 2018</div>
             <div class="pub-links">
+              <span class="pub-year-badge">2018</span>
               <span class="pub-badge">Journal</span>
               <a href="https://doi.org/10.1021/acs.langmuir.7b03650" target="_blank" rel="noopener">DOI ↗</a>
             </div>
           </li>
+
+          <!-- 2017: Lung Multiple Scattering -->
           <li class="pub-item">
             <div class="pub-title">Characterization of the Lung Parenchyma Using Ultrasound Multiple Scattering</div>
             <div class="pub-authors">Kaustav Mohanty, J. Blackwell, T. Egan, and <b>Marie Muller</b></div>
             <div class="pub-journal">Ultrasound in Medicine &amp; Biology, 43(5), 993–1003, 2017</div>
             <div class="pub-links">
+              <span class="pub-year-badge">2017</span>
               <span class="pub-badge">Journal</span>
               <a href="https://doi.org/10.1016/j.ultrasmedbio.2017.01.011" target="_blank" rel="noopener">DOI ↗</a>
             </div>
           </li>
+
+          <!-- 2008: Supersonic Shear Imaging -->
           <li class="pub-item">
             <div class="pub-title">Quantitative Assessment of Breast Lesion Viscoelasticity: Initial Clinical Results Using Supersonic Shear Imaging</div>
             <div class="pub-authors">M. Tanter, J. Bercoff, A. Athanasiou, T. Deffieux, J.-L. Gennisson, G. Montaldo, <b>Marie Muller</b>, and M. Fink</div>
             <div class="pub-journal">Ultrasound in Medicine &amp; Biology, 34(9), 1373–1386, 2008</div>
             <div class="pub-links">
+              <span class="pub-year-badge">2008</span>
               <span class="pub-badge">Journal</span>
               <a href="https://doi.org/10.1016/j.ultrasmedbio.2008.02.002" target="_blank" rel="noopener">DOI ↗</a>
             </div>
           </li>
+
         </ul>
 
       </div>
@@ -274,8 +318,9 @@
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <h4>Biomedical Ultrasound Research for Structural Tissue Characterization Lab</h4>
-          <p>Department of Mechanical &amp; Aerospace Engineering<br/>
+          <h4>BURST Lab</h4>
+          <p>Biomedical Ultrasound Research for Structural Tissue Characterization<br/>
+          Department of Mechanical &amp; Aerospace Engineering<br/>
           Engineering Building 3, Centennial Campus<br/>
           North Carolina State University<br/>
           Raleigh, NC 27695</p>
@@ -287,13 +332,14 @@
             <li><a href="people.html">People</a></li>
             <li><a href="news.html">News &amp; Updates</a></li>
             <li><a href="publications.html">Publications</a></li>
-            <li><a href="courses.html">Courses</a></li>            
+            <li><a href="courses.html">Courses</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div>
           <h4>External</h4>
           <ul>
+            <li><a href="https://orcid.org/0000-0002-5662-0650" target="_blank" rel="noopener">ORCID Profile ↗</a></li>
             <li><a href="https://scholar.google.com/citations?user=9_iPoNoAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar ↗</a></li>
             <li><a href="https://tarheels.live/ultrasonc/" target="_blank" rel="noopener">ULTRASONC ↗</a></li>
             <li><a href="https://www.mae.ncsu.edu/" target="_blank" rel="noopener">NC State MAE ↗</a></li>
@@ -302,7 +348,7 @@
       </div>
       <div class="footer-bottom">
         <span>© 2026 BURST Lab · NC State University</span>
-        <span><a href="https://accessibility.ncsu.edu/" rel="noopener">Accessibility</a> · <a href="https://www.ncsu.edu/privacy/" rel="noopener">Privacy</a></span>
+        <span><a href="https://accessibility.ncsu.edu/" target="_blank" rel="noopener">Accessibility</a> · <a href="https://www.ncsu.edu/privacy/" target="_blank" rel="noopener">Privacy</a></span>
       </div>
     </div>
   </footer>
