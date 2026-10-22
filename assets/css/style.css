@@ -613,9 +613,35 @@ p:last-child { margin-bottom: 0; }
   text-transform: uppercase;
 }
 
+/* =========================================
+   1. DESKTOP / BASE STYLES
+   ========================================= */
+
+/* Hide the Menu button on computer / desktop screens */
+.nav-toggle {
+  display: none;
+}
+
+/* =========================================
+   2. MOBILE STYLES (Screen width <= 760px)
+   ========================================= */
 @media (max-width: 760px) {
-  .nav-toggle { display: none; }
+  /* Show the toggle button on mobile */
+  .nav-toggle {
+    display: inline-block;
+    background: transparent;
+    border: 1px solid var(--line);
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--ink);
+  }
+
+  /* Hide the links by default on mobile */
   .nav-links {
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
@@ -625,10 +651,20 @@ p:last-child { margin-bottom: 0; }
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: .5rem var(--gutter) 1.5rem;
-    display: none;
+    padding: 0.5rem var(--gutter, 1.5rem) 1.5rem;
     box-shadow: var(--shadow-md);
   }
+
+  /* Show the links when someone taps the Menu button */
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+}
   .nav-links.is-open { display: flex; }
   .nav-links a { padding: .75rem 0; border-bottom: 1px solid var(--line); }
 }
