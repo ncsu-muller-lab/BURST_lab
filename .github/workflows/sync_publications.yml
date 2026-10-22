@@ -1,0 +1,32 @@
+name: Sync Publications with ORCID
+
+on:
+  schedule:
+    # Runs every Monday morning at 6:00 AM UTC
+    - cron: '0 6 * * 1'
+  workflow_dispatch: # Allows one-click manual run anytime from GitHub Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Run publications sync
+        run: python scripts/sync_publications.py
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add publications.html
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync publications with ORCID & manual list" && git push)
