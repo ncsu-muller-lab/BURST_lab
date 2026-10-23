@@ -1,5 +1,11 @@
 import os
+import sys
 import re
+
+# Add the 'scripts' folder to Python path so it can import sibling modules
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SCRIPT_DIR)
+
 import sync_publications
 import sync_grants
 
@@ -13,7 +19,7 @@ def main():
     print("=== STEP 3: Updating publications.html ===")
     if not os.path.exists("publications.html"):
         print("Error: publications.html not found.")
-        return
+        sys.exit(1)
 
     with open("publications.html", "r", encoding="utf-8") as f:
         content = f.read()
