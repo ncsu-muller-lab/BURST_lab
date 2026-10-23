@@ -1,100 +1,83 @@
-# Muller Lab — Website
+# BURST Lab — Website & Research Automation
 
-A static, multi-page website for the Ultrasonic Material Characterization Lab, designed to be hosted on GitHub Pages.
+Official website repository for the **Biomedical Ultrasound Research for Structural Tissue Characterization (BURST) Laboratory** at North Carolina State University, directed by **Dr. Marie Muller** (Associate Professor & Interim Director of Graduate Programs, Department of Mechanical & Aerospace Engineering).
 
-## What's here
-
-```
-muller-lab/
-├── index.html         # Home: hero, research areas, news preview, ULTRASONC callout
-├── people.html        # PI, postdocs, grad students, alumni
-├── news.html          # Full news feed
-├── courses.html       # Courses taught
-├── contact.html       # Contact details
-├── assets/
-│   ├── css/style.css  # All styling lives here — one file
-│   └── img/
-│       └── marie-muller.jpg
-└── README.md
-```
-
-There is **no build step**. No npm, no compiler, no framework. You can edit any HTML file in a text editor (or directly on github.com) and the change is live as soon as you commit it.
+Hosted on GitHub Pages at:  
+👉 **[https://ncsu-muller-lab.github.io/BURST_lab/](https://ncsu-muller-lab.github.io/BURST_lab/)**
 
 ---
 
-## Deploying to GitHub Pages
-
-### One-time setup (about 10 minutes)
-
-1. Create a free GitHub account at github.com if you don't have one.
-2. On github.com, click **New repository** in the top right.
-   - Repository name: `muller-lab` (or whatever you like)
-   - Visibility: **Public**
-   - Do **not** initialize it with a README (you already have one).
-3. On your repo page, click **uploading an existing file** and drag in everything from this folder (the four `.html` files, this `README.md`, and the `assets/` folder).
-4. Commit the upload.
-5. In your repo, go to **Settings → Pages** (left sidebar).
-6. Under **Source**, choose **Deploy from a branch**, and set the branch to `main` and folder to `/ (root)`. Save.
-7. Wait ~1 minute. GitHub will give you a URL like `https://<your-username>.github.io/muller-lab/`. That's the live site.
-
-### Pointing your real domain at it (optional, later)
-
-NC State IT typically owns `*.ncsu.edu` subdomains. If you want to keep `muller.wordpress.ncsu.edu` or get something like `muller.mae.ncsu.edu`, you'll need to ask the MAE web admin or NC State IT to set up a CNAME pointing at your `github.io` URL. Until then, the `github.io` URL works perfectly.
+## Architecture & Repository Structure
 
 ---
 
-## Editing the site
+## Automated Publications & Grants Engine
 
-The whole site is plain HTML and CSS. There is no database. To change something:
+`publications.html` is dynamically maintained by a Python automation pipeline coordinated by `scripts/build_research_outputs.py`.
 
-### To edit text (e.g., a student bio, a news item)
-
-1. Go to your repo on github.com.
-2. Click the file you want to edit (e.g., `people.html`).
-3. Click the pencil icon in the top right.
-4. Edit the text directly in the browser. The structure looks like this:
-   ```html
-   <div class="person">
-     <div class="person-photo">...</div>
-     <h4>Student Name</h4>
-     <p>Bio paragraph goes here.</p>
-     <span class="person-email">email@ncsu.edu</span>
-   </div>
-   ```
-5. Scroll down, write a short commit message like "Update Caleb's bio", and click **Commit changes**.
-6. The live site updates in ~30 seconds.
-
-### To add a new news item
-
-Open `news.html` and find the `<ul class="news-list">` block. Copy any existing `<li class="news-item">...</li>` and paste it as the **first** item in the list (newest at top). Edit the date, tag, headline, and body.
-
-Then do the same on `index.html` if you want it to appear in the home-page preview.
-
-### To add a new lab member
-
-Open `people.html` and find the section you need (Postdocs, Grad Students, Undergrads). Copy an existing `<div class="person">...</div>` block, paste it inside the same `<div class="people-grid">`, and edit the photo URL, name, bio, and email.
-
-For the photo: upload it to `assets/img/` in your repo, then point at it like `assets/img/firstname-lastname.jpg`.
-
-### To move someone to alumni
-
-Cut their `<div class="person">` block out and add their name to the alumni list at the bottom of `people.html`. (Already done for Austin McCandless and Ben Nguyen.)
+### How It Works:
+1. **ORCID Live Sync:** Queries Dr. Marie Muller's public ORCID record (`0000-0002-5662-0650`) and queries the Crossref API to retrieve full author lists (eliminating generic summary text) and highlight **Marie Muller** in bold.
+2. **Abstract Separation:** Automatically detects conference presentation abstracts and separates them into `conference_abstracts_only.json`, ensuring the main publication tab displays only full peer-reviewed journal articles, reviews, and clinical guidelines.
+3. **Smart In-Press Merging:** Merges works from `manual_publications.json` (such as upcoming accepted manuscripts) with ORCID records, deduplicating entries by normalized DOI and title. When an entry is confirmed live on ORCID, it is archived to `in_ORCID_now.json`.
+4. **Sponsored Grants Integration:** Reads `grants_awarded.json` and renders an interactive, expandable accordion (`+`) view with green funding pills, sponsor agency badges, project dates, and specific aims.
+5. **Interactive Sub-Tabs:** Visitors can seamlessly switch between **Publications** (default) and **Sponsored Grants** without page reloads.
 
 ---
 
-## Notes
+## Maintenance & Common Workflows
 
-- **Photos.** The lab member photos and research figures currently load from the existing WordPress site. They will keep working as long as that site stays up — but for permanence, you should download each one, place it in `assets/img/`, and update the `src=` attributes in the HTML to point at your local copy. Higher-priority for student photos than research figures.
-- **Publications.** The Publications nav link goes straight to your Google Scholar profile. If you'd rather have a curated list page, that's an easy addition later.
-- **Fonts.** The site uses Fraunces (display serif) and IBM Plex Sans (body), loaded from Google Fonts. They're free and have stable CDN URLs.
-- **NC State branding.** The accent color is NC State red, used sparingly for emphasis, links, and a single border line. It's intentionally restrained so the site feels like a research lab rather than a marketing brochure.
-- **Accessibility.** Color contrast is WCAG AA, the navigation works without JavaScript (the JS is only for the mobile menu toggle), and `prefers-reduced-motion` is respected.
+### 1. Adding a New Paper Before It Appears on ORCID
+Open `manual_publications.json` and append the new paper to the JSON array:
+```json
+{
+  "title": "Example Paper Title",
+  "authors": "Student Name, Collaborator Name, and Marie Muller",
+  "journal": "The Journal of the Acoustical Society of America (JASA), In Press",
+  "year": 2026,
+  "doi": "10.1121/...",
+  "type": "Journal"
+}
+
+
+{
+  "title": "Project Title",
+  "status": "Active Grant",
+  "agency": "National Institutes of Health (NIH)",
+  "amount": "$2,650,000.00",
+  "period": "2024 – 2029",
+  "pi": "Dr. Marie Muller (NC State MAE) & Co-PI",
+  "description": "Project narrative describing clinical or physical motivation.",
+  "aims": [
+    "Specific Aim 1...",
+    "Specific Aim 2..."
+  ]
+}
+
+
+<div class="person">
+  <div class="person-photo">
+    <img src="assets/img/firstname-lastname.webp" alt="Full Name" loading="lazy" />
+  </div>
+  <h4>Full Name</h4>
+  <p class="person-role">Ph.D. Student, MAE</p>
+
+  <p class="person-degrees">
+    M.S. - Degree Program, University Name<br />
+    B.S. - Degree Program, University Name
+  </p>
+
+  <p class="person-bio">
+    One to two sentences summarizing current thesis focus or experimental technique.<br />
+    <span class="person-offhours">Off-hours: hobby1, hobby2, hobby3.</span>
+  </p>
+
+  <a class="person-email" href="mailto:unityid@ncsu.edu">unityid@ncsu.edu</a>
+</div>
+
 
 ---
 
-## Things I didn't fill in (gaps you can plug)
-
-- Office room number in Engineering Building 3 (only the building was given).
-- A phone number, if you want one published.
-- Lab room number, if you want to list it separately from your office.
-- A few research figures could use higher-resolution replacements.
+### Step to Update:
+1. Open **`README.md`** on GitHub.
+2. Click the **pencil icon** to edit.
+3. Replace the old text with the markdown above and click **Commit changes**.
