@@ -16,7 +16,7 @@ def generate_full_page_html(pub_items_html, grant_items_html):
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Publications &amp; Grants — BURST Lab</title>
-  <meta name="description" content="Peer-reviewed publications and sponsored research grants at the BURST Lab, NC State MAE." />
+  <meta name="description" content="Peer-reviewed publications and sponsored research projects at the BURST Lab, NC State MAE." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -279,7 +279,7 @@ def generate_full_page_html(pub_items_html, grant_items_html):
             Publications
           </button>
           <button class="view-tab" id="tab-btn-grants" role="tab" aria-selected="false" aria-controls="pane-grants">
-            Sponsored Grants
+            Sponsored Projects
           </button>
         </div>
       </div>
@@ -295,7 +295,7 @@ def generate_full_page_html(pub_items_html, grant_items_html):
           </ul>
         </div>
 
-        <!-- TAB 2: SPONSORED GRANTS -->
+        <!-- TAB 2: SPONSORED Projects -->
         <div class="tab-pane" id="pane-grants" role="tabpanel" aria-labelledby="tab-btn-grants">
           <ul class="grant-list">
 {grant_items_html}
@@ -376,7 +376,7 @@ def generate_full_page_html(pub_items_html, grant_items_html):
       grantPane.classList.add('active');
       pubPane.classList.remove('active');
 
-      heading.textContent = 'Sponsored Grants.';
+      heading.textContent = 'Sponsored Projects.';
       subtext.innerHTML = 'Major federal, foundation, and clinical sponsored research awards granted to Dr. Marie Muller and the BURST Lab.';
     }});
 
