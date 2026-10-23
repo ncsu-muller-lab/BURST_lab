@@ -27,5 +27,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add publications.html in_ORCID_now.json conference_abstracts_only.json
+          git add publications.html index.html in_ORCID_now.json conference_abstracts_only.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync publications & grants" && git push)
