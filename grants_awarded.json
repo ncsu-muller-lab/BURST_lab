@@ -3,92 +3,130 @@
     "title": "Quantitative Ultrasound to Stage and Monitor Interstitial Lung Diseases",
     "status": "Active Grant",
     "agency": "National Institutes of Health (NIH)",
-    "amount": "$2,650,000",
+    "amount": "$2,650,000.00",
     "period": "2024 – 2029",
     "pi": "Dr. Marie Muller (NC State MAE) & Dr. Jonathan Mamou (Albert Einstein College of Medicine)",
-    "description": "Interstitial lung diseases (ILD) involve progressive scarring of lung tissue that severely impairs respiratory function. Currently, disease diagnosis and tracking rely on high-resolution computed tomography (HRCT), which exposes vulnerable patients to cumulative ionizing radiation and is constrained to specialized hospital facilities.",
+    "description": "Developing non-invasive, radiation-free point-of-care quantitative ultrasound (QUS) biomarkers based on acoustic backscattering and multiple scattering physics to diagnose, stage, and track progression in interstitial lung diseases (ILD), offering a bedside alternative to repeated HRCT scans.",
     "aims": [
-      "Develop non-invasive, radiation-free point-of-care quantitative ultrasound (QUS) biomarkers based on acoustic backscattering and multiple scattering physics.",
-      "Quantify sub-wavelength tissue alterations in parenchymal architecture to stage disease severity.",
-      "Provide accessible bedside monitoring tools to assess real-time patient response to antifibrotic therapeutics."
+      "Develop QUS biomarkers sensitive to sub-wavelength parenchymal architectural remodeling.",
+      "Quantify disease severity in preclinical fibrotic and edematous lung models.",
+      "Translate point-of-care algorithms to portable handheld ultrasound scanners for bedside monitoring."
     ]
   },
   {
-    "title": "Quantitative Assessment of Angiogenesis Using Ultrasound Multiple Scattering",
+    "title": "Quantitative Assessment of Angiogenesis using Ultrasound Multiple Scattering",
     "status": "Active Grant",
     "agency": "National Institutes of Health (NIH)",
     "amount": "$2,328,411.00",
     "period": "06/15/2023 – 05/31/2028",
     "pi": "Dr. Marie Muller (NC State University)",
-    "description": "Angiogenesis plays a critical role in diseases such as cancer, atherosclerosis (vasa vasorum), and tissue wound healing. While conventional Doppler, super-resolution ultrasound, and acoustic angiography allow visualization of vessel morphology, they do not provide quantitative structural metrics.",
+    "description": "Angiogenesis plays a critical role in cancer, atherosclerosis (vasa vasorum), and wound repair. While conventional Doppler and super-resolution ultrasound display vascular geometry, they fail to provide quantitative metrics. This project develops real-time assessment of microvascular architecture using Ultrasound Multiple Scattering (USMS) analysis of raw radio-frequency waveforms to establish biomarkers of tumor malignancy and plaque vulnerability.",
     "aims": [
       "Develop and optimize quantitative ultrasound methods to assess microvascular density and anisotropy non-invasively.",
-      "Establish proof of concept in preclinical rodent models that multiple scattering differentiates tumor malignancy from healthy tissue.",
-      "Translate technology into preliminary human clinical studies to benchmark diagnostic performance against standard point-of-care ultrasound."
+      "Establish proof-of-concept that multiple scattering differentiates tumor malignancy from benign tissue in preclinical models.",
+      "Validate diagnostic efficacy in preliminary clinical studies against standard point-of-care ultrasound."
     ]
   },
   {
     "title": "Building AI Expertise to Transform Quantitative Ultrasound and Reveal Hidden Tissue Information",
     "status": "Fellowship Award",
     "agency": "NC State College of Engineering",
-    "amount": "",
+    "amount": "$25,000.00",
     "period": "2026 – Present",
     "pi": "Dr. Marie Muller",
-    "description": "Inaugural Dean's Applied AI Faculty Scholarly Fellowship project integrating physics-based acoustic scattering models with modern machine learning architectures to extract microstructural tissue features from raw ultrasonic waveforms.",
+    "description": "Inaugural Dean's Applied AI Faculty Scholarly Fellowship project integrating physics-based acoustic scattering models with machine learning architectures to extract hidden microstructural tissue properties from raw ultrasonic radiofrequency signals.",
     "aims": []
   },
   {
-    "title": "Innovative Ultrasonic Methods for the Diagnosis and Monitoring of Pulmonary Fibrosis",
+    "title": "Novel Ultrasonic Methods for the Assessment of Pulmonary Edema",
     "status": "Completed Award",
     "agency": "National Institutes of Health (NIH)",
-    "amount": "",
-    "period": "",
+    "amount": "$430,285.00",
+    "period": "09/01/2018 – 08/31/2021",
     "pi": "Dr. Marie Muller (NC State MAE)",
-    "description": "Pulmonary fibrosis leads to alveolar destruction and dense collagen deposition. Standard pulmonary function tests detect functional loss only after irreversible architectural damage has occurred. This project investigated ultrasound wave propagation through multiple-scattering sub-pleural lung tissue to detect fibrotic remodeling prior to macroscopic CT manifestation.",
-    "aims": []
+    "description": "Pulmonary edema is excessive fluid accumulation in alveolar spaces resulting from congestive heart failure or acute respiratory distress. Serial, radiation-free ultrasound assessments allow clinicians to evaluate progression and resolution of fluid overload directly at the point of care.",
+    "aims": [
+      "Formulate physics-based multiple scattering parameters to quantify lung fluid volume continuously.",
+      "Differentiate cardiogenic alveolar edema from sub-pleural fibrotic thickening.",
+      "Validate quantitative acoustic indices against gravimetric wet/dry lung weight ratios."
+    ]
   },
   {
-    "title": "Ultrasound Enhanced Platelet-Like Particle Therapy for Accelerated Wound Repair",
-    "status": "Sponsored Research",
-    "agency": "National Institutes of Health / Collaborative",
-    "amount": "",
-    "period": "",
-    "pi": "Dr. Marie Muller & Dr. Ashley C. Brown (UNC / NC State Joint BME)",
-    "description": "Integrating synthetic platelet-like microgels (PLPs) with targeted ultrasonic wave stimulation to enhance hemostasis, clot contraction, and accelerated tissue regeneration. This project explores acoustic radiation force and microgel deformation mechanics to mechanically trigger synthetic platelet activation at injury sites.",
-    "aims": []
+    "title": "Novel Ultrasound Localization of Pulmonary Nodules during Video Assisted Thoracic Surgery to Improve Surgical Resection",
+    "status": "Completed Award",
+    "agency": "National Institutes of Health (NIH / NCI)",
+    "amount": "$362,210.00",
+    "period": "05/15/2019 – 10/31/2022",
+    "pi": "Dr. Marie Muller (NC State) & Dr. Thomas M. Egan (UNC Surgery)",
+    "description": "Small, deep pulmonary nodules are often non-palpable and difficult to localize during minimally invasive Video-Assisted Thoracic Surgery (VATS), frequently forcing conversion to open thoracotomy. This project developed a specialized intraoperative continuum ultrasound probe that exploits acoustic multiple scattering to detect nodule boundaries in inflated lungs, guiding surgeons to achieve clean surgical margins in real time.",
+    "aims": [
+      "Design and test an actuated flexible continuum ultrasound probe suitable for VATS ports.",
+      "Differentiate dense neoplastic nodule tissue from highly scattering surrounding aerated lung parenchyma.",
+      "Accurately determine the margin distance from nodule edge to surgical stapler lines."
+    ]
   },
   {
-    "title": "Ultrasonic Characterization of Atherosclerotic Plaque Using Multiple Scattering",
+    "title": "Innovative Ultrasonic Methods For The Diagnosis And Monitoring Of Pulmonary Fibrosis",
     "status": "Completed Award",
     "agency": "National Institutes of Health (NIH)",
-    "amount": "",
-    "period": "",
-    "pi": "Dr. Marie Muller (Co-Investigator: Dr. Xiaoning Jiang)",
-    "description": "Rupture of vulnerable atherosclerotic plaques in carotid and coronary arteries is the primary trigger of strokes and myocardial infarctions. Standard B-mode imaging evaluates luminal stenosis percentage but fails to accurately assess plaque composition and rupture vulnerability. This study developed specialized transducer arrays and multiple-scattering signal processing algorithms to quantify the scattering mean free path in carotid plaques.",
+    "amount": "$438,815.00",
+    "period": "04/01/2018 – 03/31/2021",
+    "pi": "Dr. Marie Muller (NC State MAE)",
+    "description": "Pulmonary fibrosis causes progressive alveolar destruction and dense collagen deposition. Standard pulmonary function tests detect functional loss only after irreversible architectural damage has occurred. This study developed acoustic diffusion metrics to detect microstructural remodeling long before macroscopic changes appear on CT.",
     "aims": []
   },
   {
-    "title": "Assessment of Bone Micro-Structure Using Ultrasonic Methods",
+    "title": "Ultrasound Enhanced Platelet-like Particle Therapy for Accelerated Wound Repair",
+    "status": "Sponsored Research",
+    "agency": "National Institutes of Health (NIH) / Collaborative",
+    "amount": "$375,000.00",
+    "period": "09/01/2018 – 08/31/2022",
+    "pi": "Dr. Marie Muller (NC State) & Dr. Ashley C. Brown (UNC / NC State Joint BME)",
+    "description": "Integrating deformable synthetic platelet-like microgels (PLPs) with acoustic radiation force to stimulate clot contraction, accelerate hemostasis, and promote tissue regeneration in acute trauma and surgical wound healing.",
+    "aims": []
+  },
+  {
+    "title": "Ultrasonic Characterization of Atherosclerotic Plaque using Multiple Scattering",
+    "status": "Completed Award",
+    "agency": "National Institutes of Health (NIH)",
+    "amount": "$429,000.00",
+    "period": "07/01/2017 – 06/30/2020",
+    "pi": "Dr. Marie Muller (Co-Investigator: Dr. Xiaoning Jiang)",
+    "description": "Rupture of vulnerable atherosclerotic plaques in carotid arteries is the primary cause of stroke. This study developed multi-element transducer arrays and backscattering signal processing algorithms to quantify the scattering mean free path in carotid plaques, directly correlating acoustic signatures with fibrous cap thickness and intraplaque hemorrhage.",
+    "aims": []
+  },
+  {
+    "title": "Assessment of Bone Micro-Structure using Ultrasonic Methods",
     "status": "Completed Award",
     "agency": "National Institutes of Health (NIH)",
     "amount": "$139,195.00",
     "period": "08/02/2016 – 05/31/2019",
     "pi": "Dr. Marie Muller (NC State MAE)",
-    "description": "Osteoporosis modifies microarchitecture and bone density, and assessment of both is required to predict fracture risk accurately. We developed a quantitative, non-invasive ultrasound method using multiple scattering in cortical and trabecular bone.",
+    "description": "Osteoporosis alters both bone microarchitecture and density. Current clinical DXA assessment relies solely on bone mineral density using ionizing radiation. This research developed a non-ionizing quantitative ultrasound technique sensitive to cortical pore size, pore density, and anisotropy using multiple scattering principles.",
     "aims": [
-      "Establish quantitative relationships between bone micro-architectural properties and ultrasound multiple scattering parameters.",
-      "Validate numerical and experimental wave models across synthetic bone phantoms and biological specimens.",
-      "Combine micro-structural parameters with bone mineral density metrics to establish improved diagnostic predictors of fracture risk."
+      "Establish quantitative relationships between bone micro-architecture and multiple scattering parameters.",
+      "Validate wave propagation models in synthetic cortical bone phantoms and biological specimens.",
+      "Combine microstructural ultrasound metrics with mineral density for improved fracture risk prediction."
     ]
+  },
+  {
+    "title": "Experimental Ultrasonic Characterization of Bone Micro-Architecture",
+    "status": "Completed Award",
+    "agency": "NCSU Faculty Research and Professional Development",
+    "amount": "$6,900.00",
+    "period": "07/01/2015 – 06/30/2016",
+    "pi": "Dr. Marie Muller (NC State MAE)",
+    "description": "Faculty seed grant supporting laboratory experimental validation of high-frequency broadband ultrasound transducers and custom synthetic phantoms mimicking healthy and osteoporotic cortical bone pores.",
+    "aims": []
   },
   {
     "title": "Quantitative Characterization of Trabecular Bone Micro-Architecture Using Ultrasound: Applications to Spaceflight Osteopenia",
     "status": "Sponsored Award",
     "agency": "NC Space Grant Consortium / NASA",
-    "amount": "",
-    "period": "",
+    "amount": "$10,000.00",
+    "period": "06/01/2016 – 05/31/2017",
     "pi": "Dr. Marie Muller (NC State MAE)",
-    "description": "Astronauts experience accelerated loss of bone mineral density and deterioration of trabecular architecture during long-duration spaceflight. This project formulated lightweight, radiation-free ultrasonic monitoring devices to monitor microgravity-induced skeletal disuse and evaluate the efficacy of exercise and nutritional countermeasures during extended orbital missions.",
+    "description": "Astronauts experience rapid deterioration of trabecular micro-architecture during long-duration space missions. This project formulated radiation-free, portable ultrasonic monitoring protocols to assess microgravity-induced skeletal disuse and evaluate the efficacy of orbital exercise countermeasures.",
     "aims": []
   }
 ]
