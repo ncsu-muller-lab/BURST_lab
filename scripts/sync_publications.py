@@ -263,34 +263,17 @@ def build_publications_html():
         if title_key: seen_titles.add(title_key)
         merged.append(p)
 
-merged.sort(key=lambda x: x.get("year", 0), reverse=True)
+# Sort newest first
+    merged.sort(key=lambda x: x.get("year", 0), reverse=True)
 
     pub_items_html = []
-    divider_inserted = False
-
     for p in merged:
-        year_val = p.get("year", 0)
-        try:
-            year_int = int(year_val)
-        except (ValueError, TypeError):
-            year_int = 0
-
-        # Insert a visual divider right below the last 2017 paper
-        if year_int < 2017 and not divider_inserted:
-            divider_html = """          <li class="pub-divider">
-            <span class="pub-divider-line"></span>
-            <span class="pub-divider-text">Prior to BURST Lab (Foundational &amp; Postdoctoral Works, 2003 – 2016)</span>
-            <span class="pub-divider-line"></span>
-          </li>"""
-            pub_items_html.append(divider_html)
-            divider_inserted = True
-
         authors_raw = p.get("authors", "")
+        # Bold Marie Muller variations
         authors_html = re.sub(r"\b(Marie Muller|M\. Muller|Muller, M\.)\b", r"<b>\1</b>", authors_raw)
         doi_val = p.get("doi")
         doi_link = f'<a href="https://doi.org/{doi_val}" target="_blank" rel="noopener">DOI ↗</a>' if doi_val else ""
-        year_str = str(year_val) if year_val else "Recent"
-        badge_type = p.get("type", "Journal")
+        year_str = str(p.get("year")) if p.get("year") else "Recent"
 
         item_html = f"""          <li class="pub-item">
             <div class="pub-title">{p.get("title")}</div>
@@ -298,7 +281,7 @@ merged.sort(key=lambda x: x.get("year", 0), reverse=True)
             <div class="pub-journal">{p.get("journal", "")}</div>
             <div class="pub-links">
               <span class="pub-year-badge">{year_str}</span>
-              <span class="pub-badge">{badge_type}</span>
+              <span class="pub-badge">{p.get("type", "Journal")}</span>
               {doi_link}
             </div>
           </li>"""
