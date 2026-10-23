@@ -1,4 +1,4 @@
-name: Sync Publications with ORCID
+name: Sync Publications and Grants
 
 on:
   schedule:
@@ -20,12 +20,12 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Run publications sync
-        run: python scripts/sync_publications.py
+      - name: Build Publications & Grants
+        run: python scripts/build_research_outputs.py
 
       - name: Commit and push if changed
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add publications.html in_ORCID_now.json conference_abstracts_only.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Sync publications & update abstracts archive" && git push)
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync publications & grants" && git push)
