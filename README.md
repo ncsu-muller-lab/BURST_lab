@@ -24,7 +24,7 @@ BURST_lab/
 ├── conference_abstracts_only.json  # Auto-generated: Archived conference presentation abstracts
 │
 ├── scripts/
-│   ├── build_research_outputs.py   # Master coordinator: Builds and generates publications.html
+│   ├── build_research_outputs.py   # Master coordinator: Builds publications.html & syncs top news to index.html
 │   ├── sync_publications.py        # ORCID v3 API + Crossref fetcher, deduplication & abstract filter
 │   └── sync_grants.py              # Transforms grants_awarded.json into expandable (+) accordions
 │
@@ -121,6 +121,26 @@ Member cards follow a standardized visual hierarchy. Add new members inside the 
 ### 5. Moving a Member to Alumni
 1. Cut their `<div class="person">` block from the active roster in `people.html`.
 2. Add their name and new role to the corresponding list in the `<section class="section">` Alumni block at the bottom of `people.html` (Postdoc Alumni, Ph.D. Alumni, Graduate Alumni, or Undergraduate Alumni).
+
+### 6. Adding or Updating Lab News (`news.html` & Automated `index.html` Preview)
+You only need to update **`news.html`**. When the build script runs, it automatically extracts the top 3 newest items and updates the homepage preview on `index.html`.
+
+1. Open `news.html` in GitHub and find `<ul class="news-list">`.
+2. Paste the new entry right at the top of the list (so the latest news appears first):
+
+```html
+<li class="news-item">
+  <div class="news-date">Month Year</div>
+  <div class="news-body">
+    <span class="news-tag">Publication</span> <!-- e.g., Publication, Grant, Award, Defense, Conference -->
+    <h3>Headline of the News Item.</h3>
+    <p>Detailed summary description or paper citation details go here.</p>
+    <p><a href="[https://doi.org/](https://doi.org/)..." target="_blank" rel="noopener">Read the announcement / paper →</a></p>
+  </div>
+</li>
+```
+3. Commit the changes to `news.html`.
+4. Trigger the workflow in the **Actions** tab (or wait for the weekly scheduled run) so `build_research_outputs.py` syncs the top 3 items to `index.html`.
 
 ---
 
