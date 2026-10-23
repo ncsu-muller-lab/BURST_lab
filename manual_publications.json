@@ -310,5 +310,101 @@
     "year": 2017,
     "doi": "10.1016/j.ultrasmedbio.2017.01.011",
     "type": "Journal"
+  },
+  {
+    "title": "Assessment of the cervix in pregnant women using shear wave elastography: a feasibility study",
+    "authors": "Marie Muller, D. Aït-Belkacem, M. Hessabi, Jean-Luc Gennisson, G. Grangé, F. Goffinet, François Lecarpentier, Mickael Tanter, and Mathias Fink",
+    "journal": "Ultrasound in Medicine & Biology, 41(11), 2789–2797",
+    "year": 2015,
+    "doi": "10.1016/j.ultrasmedbio.2015.06.020",
+    "type": "Journal"
+  },
+  {
+    "title": "In vivo evaluation of cervical stiffness evolution during induced ripening using shear wave elastography, histology and 2-photon excitation microscopy: insight from an animal model",
+    "authors": "Marie Muller, Jean-Luc Gennisson, Mickael Tanter, and Mathias Fink",
+    "journal": "Ultrasound in Medicine & Biology, 41(5), 1435–1443",
+    "year": 2015,
+    "doi": "10.1016/j.ultrasmedbio.2014.12.016",
+    "type": "Journal"
+  },
+  {
+    "title": "Measurements of ultrasound velocity and attenuation in numerical anisotropic porous media compared to Biot's and multiple scattering models",
+    "authors": "F. Mézière, Marie Muller, Emmanuel Bossy, and Arnaud Derode",
+    "journal": "Ultrasonics, 54(5), 1146–1154",
+    "year": 2014,
+    "doi": "10.1016/j.ultras.2013.10.015",
+    "type": "Journal"
+  },
+  {
+    "title": "Attenuation, scattering, and absorption of ultrasound in the skull bone",
+    "authors": "Gianmarco Pinton, Jean-François Aubry, Emmanuel Bossy, Marie Muller, Mathieu Pernot, and Mickael Tanter",
+    "journal": "Medical Physics, 39(1), 299–307",
+    "year": 2012,
+    "doi": "10.1118/1.3668316",
+    "type": "Journal"
+  },
+  {
+    "title": "Quantitative viscoelasticity mapping of human liver using supersonic shear imaging: preliminary in vivo feasibility study",
+    "authors": "Marie Muller, Jean-Luc Gennisson, Thomas Deffieux, Mickael Tanter, and Mathias Fink",
+    "journal": "Ultrasound in Medicine & Biology, 35(2), 219–229",
+    "year": 2009,
+    "doi": "10.1016/j.ultrasmedbio.2008.08.018",
+    "type": "Journal"
+  },
+  {
+    "title": "Quantitative Assessment of Breast Lesion Viscoelasticity: Initial Clinical Results Using Supersonic Shear Imaging",
+    "authors": "Mickael Tanter, Jeremy Bercoff, A. Athanasiou, Thomas Deffieux, Jean-Luc Gennisson, G. Montaldo, Marie Muller, and Mathias Fink",
+    "journal": "Ultrasound in Medicine & Biology, 34(9), 1373–1386",
+    "year": 2008,
+    "doi": "10.1016/j.ultrasmedbio.2008.02.002",
+    "type": "Journal"
+  },
+  {
+    "title": "Prediction of bone mechanical properties using QUS and pQCT: study of the human distal radius",
+    "authors": "Marie Muller, David Mitton, Petro Moilanen, Valérie Bousson, Maryline Talmant, and Pascal Laugier",
+    "journal": "Medical Engineering & Physics, 30(6), 761–767",
+    "year": 2008,
+    "doi": "10.1016/j.medengphy.2007.08.006",
+    "type": "Journal"
+  },
+  {
+    "title": "Nonlinear ultrasound can detect accumulated damage in human bone",
+    "authors": "Marie Muller, David Mitton, Maryline Talmant, Paul A. Johnson, and Pascal Laugier",
+    "journal": "Journal of Biomechanics, 41(5), 1062–1068",
+    "year": 2008,
+    "doi": "10.1016/j.jbiomech.2007.12.011",
+    "type": "Journal"
+  },
+  {
+    "title": "Comparison of three ultrasonic axial transmission methods for bone assessment",
+    "authors": "Marie Muller, Petro Moilanen, Emmanuel Bossy, Patrick H. F. Nicholson, V. Kilappa, J. Timonen, Maryline Talmant, S. Cheng, and Pascal Laugier",
+    "journal": "Ultrasound in Medicine & Biology, 31(5), 633–642",
+    "year": 2005,
+    "doi": "10.1016/j.ultrasmedbio.2005.01.018",
+    "type": "Journal"
+  },
+  {
+    "title": "Nonlinear resonant ultrasound spectroscopy (NRUS) applied to damage assessment in bone",
+    "authors": "Marie Muller, Alexander Sutin, Robert Guyer, Maryline Talmant, Pascal Laugier, and Paul A. Johnson",
+    "journal": "The Journal of the Acoustical Society of America, 118(6), 3946–3952",
+    "year": 2005,
+    "doi": "10.1121/1.2130947",
+    "type": "Journal"
+  },
+  {
+    "title": "The role of viscosity in the impulse diffraction field of elastic waves induced by the acoustic radiation force",
+    "authors": "Jeremy Bercoff, Mickael Tanter, Marie Muller, and Mathias Fink",
+    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 51(11), 1523–1536",
+    "year": 2004,
+    "doi": "10.1109/TUFFC.2004.1367494",
+    "type": "Journal"
+  },
+  {
+    "title": "Supersonic shear imaging: a new technique for soft tissue elasticity mapping",
+    "authors": "Jeremy Bercoff, Mickael Tanter, Marie Muller, and Mathias Fink",
+    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 51(4), 396–409",
+    "year": 2004,
+    "doi": "10.1109/TUFFC.2004.1295425",
+    "type": "Journal"
   }
 ]
