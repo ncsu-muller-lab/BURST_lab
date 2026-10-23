@@ -8,12 +8,38 @@ Hosted on GitHub Pages at:
 ---
 
 ## Architecture & Repository Structure
+BURST_lab/
+├── index.html                      # Home: research thrusts, interactive modal figures, news preview
+├── people.html                     # Lab roster: PI profile, postdocs, graduate students, alumni
+├── news.html                       # News feed, major awards, and research milestones
+├── publications.html               # Generated page: Sub-tabs for Publications vs. Sponsored Grants
+├── courses.html                    # Undergraduate & graduate courses taught
+├── contact.html                    # Campus location (EB3 Centennial Campus), office, lab rooms
+│
+├── grants_awarded.json             # Source of truth: Curated federal & foundation grant awards
+├── manual_publications.json        # Source of truth: In-press & manually indexed papers
+├── in_ORCID_now.json               # Auto-generated: Tracks manual entries verified live on ORCID
+├── conference_abstracts_only.json  # Auto-generated: Archived conference presentation abstracts
+│
+├── scripts/
+│   ├── build_research_outputs.py   # Master coordinator: Builds and generates publications.html
+│   ├── sync_publications.py        # ORCID v3 API + Crossref fetcher, deduplication & abstract filter
+│   └── sync_grants.py              # Transforms grants_awarded.json into expandable (+) accordions
+│
+├── .github/workflows/
+│   └── sync_publications.yml       # Scheduled GitHub Action (weekly auto-sync + manual trigger)
+│
+├── assets/
+│   ├── css/
+│   │   └── style.css               # Central stylesheet (clean typography, mobile nav, modals)
+│   └── img/                        # Member headshots (.webp / .jpg), lab figures, branding
+└── README.md
 
 ---
 
 ## Automated Publications & Grants Engine
 
-`publications.html` is dynamically maintained by a Python automation pipeline coordinated by `scripts/build_research_outputs.py`.
+`publications.html` is dynamically generated and maintained by a Python automation pipeline coordinated by `scripts/build_research_outputs.py`.
 
 ### How It Works:
 1. **ORCID Live Sync:** Queries Dr. Marie Muller's public ORCID record (`0000-0002-5662-0650`) and queries the Crossref API to retrieve full author lists (eliminating generic summary text) and highlight **Marie Muller** in bold.
@@ -38,7 +64,11 @@ Open `manual_publications.json` and append the new paper to the JSON array:
   "type": "Journal"
 }
 
+Run the GitHub Action (or wait for the weekly Monday run), and the paper will be formatted and injected into publications.html automatically.
 
+
+2. Adding or Updating Sponsored Grants
+Open grants_awarded.json and add or edit the grant entry:
 {
   "title": "Project Title",
   "status": "Active Grant",
@@ -53,7 +83,14 @@ Open `manual_publications.json` and append the new paper to the JSON array:
   ]
 }
 
+3. Triggering the Sync Manually
+In your GitHub repository, navigate to the Actions tab.
+Select Sync Publications and Grants from the left sidebar.
+Click Run workflow $\rightarrow$ Run workflow. The pipeline completes in ~15–20 seconds and commits the updated publications.html.
 
+
+4. Adding or Updating Lab Members (people.html)
+Member cards follow a standardized visual hierarchy. Add new members inside the appropriate <div class="people-grid">:
 <div class="person">
   <div class="person-photo">
     <img src="assets/img/firstname-lastname.webp" alt="Full Name" loading="lazy" />
@@ -73,11 +110,32 @@ Open `manual_publications.json` and append the new paper to the JSON array:
 
   <a class="person-email" href="mailto:unityid@ncsu.edu">unityid@ncsu.edu</a>
 </div>
+Tip: Place headshot images in assets/img/ using .webp or .jpg formatted to a 1:1 square aspect ratio.
 
 
----
+5. Moving a Member to Alumni
+Cut their <div class="person"> block from the active roster in people.html.
 
-### Step to Update:
-1. Open **`README.md`** on GitHub.
-2. Click the **pencil icon** to edit.
-3. Replace the old text with the markdown above and click **Commit changes**.
+Add their name and new role to the corresponding list in the <section class="section"> Alumni block at the bottom of people.html (Postdoc Alumni, Ph.D. Alumni, Graduate Alumni, or Undergraduate Alumni).
+
+Design System & Styling Guidelines
+Typography: Uses Google Fonts IBM Plex Sans for clear headings and body text, with IBM Plex Mono for academic metadata badges, tags, and email labels.
+
+Color Palette:
+
+Primary Background: #f8fafc (neutral off-white canvas)
+
+Cards & Modals: #ffffff with subtle borders (#e2e8f0) and elevation shadows
+
+University Accent: NC State Red (#cc0000) for badges, links, active states, and accents
+
+Funding Badges: Emerald Green (#047857 on #ecfdf5) for grant awards
+
+Accessibility: Fully responsive across mobile, tablet, and desktop viewports, with WCAG AA compliant contrast ratios and keyboard-accessible navigation menus and accordions.
+
+Deployment Details
+Host: GitHub Pages
+
+Branch: main (served from root /)
+
+DNS / Custom Domain: Standard GitHub Pages URL. Can be routed to an institutional *.ncsu.edu subdomain by configuring a CNAME record through NC State MAE Web Administration / OIT.
