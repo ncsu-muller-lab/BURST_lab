@@ -1,5 +1,6 @@
 import os
 import sys
+import re
 
 # Ensure the scripts folder is in the import path
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -218,7 +219,7 @@ def generate_full_page_html(pub_items_html, grant_items_html):
       background: var(--accent);
       color: #ffffff;
       border-color: var(--accent);
-      transform: rotate(45deg); /* Rotates + into an x/minus */
+      transform: rotate(45deg);
     }}
     .grant-body {{
       display: none;
@@ -346,7 +347,6 @@ def generate_full_page_html(pub_items_html, grant_items_html):
   </footer>
 
   <script>
-    // Sub-Tabs Switching (Publications vs Grants)
     const pubBtn = document.getElementById('tab-btn-pubs');
     const grantBtn = document.getElementById('tab-btn-grants');
     const pubPane = document.getElementById('pane-pubs');
@@ -380,7 +380,6 @@ def generate_full_page_html(pub_items_html, grant_items_html):
       subtext.innerHTML = 'Major federal, foundation, and clinical sponsored research awards granted to Dr. Marie Muller and the BURST Lab.';
     }});
 
-    // Accordion Expand/Collapse for Grants (Delegated Event)
     document.addEventListener('click', (e) => {{
       const header = e.target.closest('.grant-header');
       if (header) {{
@@ -391,7 +390,6 @@ def generate_full_page_html(pub_items_html, grant_items_html):
       }}
     }});
 
-    // Mobile nav hamburger toggle
     const navBtn = document.querySelector('.nav-toggle');
     const navLinks = document.getElementById('nav-links');
     if (navBtn && navLinks) {{
@@ -405,6 +403,33 @@ def generate_full_page_html(pub_items_html, grant_items_html):
 </html>
 """
 
+def update_index_news():
+    """Extracts top 3 news items from news.html and updates index.html."""
+    if not os.path.exists("news.html") or not os.path.exists("index.html"):
+        return
+
+    with open("news.html", "r", encoding="utf-8") as f:
+        news_html = f.read()
+
+    # Find all <li class="news-item">...</li> blocks
+    items = re.findall(r'(<li class="news-item">.*?</li>)', news_html, flags=re.DOTALL)
+    if not items:
+        return
+
+    top_3_items = "\n".join(items[:3])
+
+    with open("index.html", "r", encoding="utf-8") as f:
+        index_html = f.read()
+
+    # Replace <ul class="news-list"> in index.html with the top 3 items
+    pattern = r'(<ul class="news-list">)(.*?)(</ul>)'
+    updated_index = re.sub(pattern, r'\1\n' + top_3_items + r'\n        \3', index_html, flags=re.DOTALL)
+
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(updated_index)
+
+    print("Successfully synced the top 3 news items to index.html!")
+
 def main():
     print("=== STEP 1: Building Publications from ORCID & Manual JSON ===")
     pub_html = sync_publications.build_publications_html()
@@ -414,11 +439,12 @@ def main():
 
     print("=== STEP 3: Writing full publications.html from scratch ===")
     full_html = generate_full_page_html(pub_html, grants_html)
-
     with open("publications.html", "w", encoding="utf-8") as f:
         f.write(full_html)
+    print("Successfully built publications.html!")
 
-    print("Successfully built full publications.html with sub-tabs and grants!")
+    print("=== STEP 4: Syncing top 3 news items to index.html ===")
+    update_index_news()
 
 if __name__ == "__main__":
     main()
