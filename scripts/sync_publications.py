@@ -6,7 +6,7 @@ import os
 ORCID_ID = "0000-0002-5662-0650"
 HEADERS = {
     "Accept": "application/json",
-    "User-Agent": "NCState-BURST-Lab-Website/1.0"
+    "User-Agent": "NCState-BURST-Lab-Website/1.0 (mailto:mmuller2@ncsu.edu)"
 }
 
 def clean_doi(doi_str):
@@ -20,6 +20,59 @@ def normalize_title(title_str):
     if not title_str:
         return ""
     return re.sub(r"\W+", "", title_str.lower()).strip()
+
+def fetch_work_contributors(put_code):
+    """Fetches full contributor list from individual ORCID work endpoint."""
+    url = f"https://pub.orcid.org/v3.0/{ORCID_ID}/work/{put_code}"
+    req = urllib.request.Request(url, headers=HEADERS)
+    try:
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            contributors = data.get("contributors", {}).get("contributor", [])
+            names = []
+            for c in contributors:
+                credit_name = c.get("credit-name", {})
+                if credit_name and credit_name.get("value"):
+                    names.append(credit_name.get("value").strip())
+            if names:
+                if len(names) == 1:
+                    return names[0]
+                elif len(names) == 2:
+                    return f"{names[0]} and {names[1]}"
+                else:
+                    return f"{', '.join(names[:-1])}, and {names[-1]}"
+    except Exception:
+        pass
+    return ""
+
+def fetch_doi_authors(doi):
+    """Fallback: Queries Crossref API for full author list using DOI."""
+    if not doi:
+        return ""
+    url = f"https://api.crossref.org/works/{doi}"
+    req = urllib.request.Request(url, headers={"User-Agent": "NCState-BURST-Lab/1.0"})
+    try:
+        with urllib.request.urlopen(req, timeout=5) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            authors = data.get("message", {}).get("author", [])
+            names = []
+            for a in authors:
+                given = a.get("given", "").strip()
+                family = a.get("family", "").strip()
+                if given and family:
+                    names.append(f"{given} {family}")
+                elif family:
+                    names.append(family)
+            if names:
+                if len(names) == 1:
+                    return names[0]
+                elif len(names) == 2:
+                    return f"{names[0]} and {names[1]}"
+                else:
+                    return f"{', '.join(names[:-1])}, and {names[-1]}"
+    except Exception:
+        pass
+    return ""
 
 def fetch_orcid_works():
     url = f"https://pub.orcid.org/v3.0/{ORCID_ID}/works"
@@ -38,6 +91,7 @@ def fetch_orcid_works():
         if not summaries:
             continue
         item = summaries[0]
+        put_code = item.get("put-code")
         
         # Title
         title = item.get("title", {}).get("title", {}).get("value", "").strip()
@@ -65,10 +119,19 @@ def fetch_orcid_works():
             if eid.get("external-id-type", "").lower() == "doi":
                 doi = clean_doi(eid.get("external-id-value", ""))
                 break
-                
+        
+        # Resolve real authors
+        authors = ""
+        if put_code:
+            authors = fetch_work_contributors(put_code)
+        if not authors and doi:
+            authors = fetch_doi_authors(doi)
+        if not authors:
+            authors = "Marie Muller"
+
         pubs.append({
             "title": title,
-            "authors": "Marie Muller et al.",
+            "authors": authors,
             "journal": journal,
             "year": year,
             "doi": doi,
@@ -122,7 +185,7 @@ def main():
         json.dump(in_orcid_now, f, indent=2)
     print(f"Updated in_ORCID_now.json with {len(in_orcid_now)} items confirmed in ORCID.")
 
-    # Merge for publications.html (manual entries take precedence for detailed author lists)
+    # Merge for publications.html (manual entries take precedence)
     seen_dois = set()
     seen_titles = set()
     merged = []
@@ -155,7 +218,9 @@ def main():
     # Build HTML list items
     pub_items_html = []
     for p in merged:
-        authors_html = p.get("authors", "").replace("Marie Muller", "<b>Marie Muller</b>")
+        authors_raw = p.get("authors", "")
+        # Bold Marie Muller variations
+        authors_html = re.sub(r"\b(Marie Muller|M\. Muller|Muller, M\.)\b", r"<b>\1</b>", authors_raw)
         doi_val = p.get("doi")
         doi_link = f'<a href="https://doi.org/{doi_val}" target="_blank" rel="noopener">DOI ↗</a>' if doi_val else ""
         year_str = str(p.get("year")) if p.get("year") else "Recent"
