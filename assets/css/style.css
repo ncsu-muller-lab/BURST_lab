@@ -942,3 +942,34 @@ p:last-child {
     border-bottom: 1px solid var(--line);
   }
 }
+/* =========================================================
+   Publications Divider (Pre-2017 Foundational Section)
+   ========================================================= */
+.pub-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0 1.5rem;
+  list-style: none;
+  width: 100%;
+}
+
+.pub-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--line, #e2e8f0);
+}
+
+.pub-divider-text {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted, #64748b);
+  background: var(--bg, #f8fafc);
+  padding: 5px 14px;
+  border: 1px solid var(--line, #e2e8f0);
+  border-radius: 20px;
+  white-space: nowrap;
+}
