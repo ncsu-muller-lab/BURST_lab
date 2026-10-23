@@ -672,6 +672,7 @@ p:last-child {
   margin-top: 1.75rem;
 }
 
+/* People Card Layout Details */
 .person {
   background: var(--bg-card);
   border: 1px solid var(--line);
@@ -703,22 +704,50 @@ p:last-child {
 .person h4 {
   font-size: 1.15rem;
   color: var(--ink);
-  margin-bottom: 0.35rem;
-  text-transform: none;
-  letter-spacing: 0;
+  margin-bottom: 0.25rem;
+  font-weight: 700;
 }
 
-.person p {
+.person-role {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.85rem;
+}
+
+.person-degrees {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+  border-left: 2px solid var(--line);
+  padding-left: 0.65rem;
+  margin-bottom: 0.95rem;
+}
+
+.person-bio {
   font-size: 0.92rem;
   color: var(--ink-soft);
-  margin-bottom: 0.75rem;
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+
+.person-offhours {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--ink-muted);
+  font-style: italic;
+  margin-top: 0.35rem;
 }
 
 .person-email {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--accent);
   margin-top: auto;
+  word-break: break-all;
 }
 
 /* Alumni Section */
