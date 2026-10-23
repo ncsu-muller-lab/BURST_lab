@@ -27,5 +27,5 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add publications.html in_ORCID_now.json
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync publications & update in_ORCID_now list" && git push)
+          git add publications.html in_ORCID_now.json conference_abstracts_only.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Sync publications & update abstracts archive" && git push)
