@@ -21,8 +21,54 @@ def normalize_title(title_str):
         return ""
     return re.sub(r"\W+", "", title_str.lower()).strip()
 
+def is_meeting_abstract(work_type_raw, title, journal, doi):
+    """
+    Identifies conference abstracts, presentation summaries, and conference proceedings.
+    """
+    # 1. ORCID work types for abstracts/posters
+    blocked_types = [
+        "conference_abstract", 
+        "conference_poster", 
+        "conference_paper", 
+        "lecture_speech", 
+        "other"
+    ]
+    if any(bt in work_type_raw.lower() for bt in blocked_types):
+        return True
+
+    # 2. Key text markers in JASA / JUM conference supplements
+    combined_text = f"{title} {journal}".lower()
+    abstract_signals = [
+        "supplement",
+        "suppl",
+        "_supplement",
+        "abstracts of",
+        "conference abstract",
+        "annual meeting abstract",
+        "meeting abstract"
+    ]
+    if any(sig in combined_text for sig in abstract_signals):
+        return True
+
+    # 3. Crossref check via DOI (detects JASA A-page numbering & proceedings types)
+    if doi:
+        url = f"https://api.crossref.org/works/{doi}"
+        req = urllib.request.Request(url, headers={"User-Agent": "NCState-BURST-Lab/1.0"})
+        try:
+            with urllib.request.urlopen(req, timeout=4) as resp:
+                data = json.loads(resp.read().decode("utf-8")).get("message", {})
+                cr_type = data.get("type", "").lower()
+                if cr_type in ["proceedings-article", "component", "dataset"]:
+                    return True
+                page = data.get("page", "")
+                if re.match(r"^A\d+", page, flags=re.I):
+                    return True
+        except Exception:
+            pass
+
+    return False
+
 def fetch_work_contributors(put_code):
-    """Fetches full contributor list from individual ORCID work endpoint."""
     url = f"https://pub.orcid.org/v3.0/{ORCID_ID}/work/{put_code}"
     req = urllib.request.Request(url, headers=HEADERS)
     try:
@@ -46,7 +92,6 @@ def fetch_work_contributors(put_code):
     return ""
 
 def fetch_doi_authors(doi):
-    """Fallback: Queries Crossref API for full author list using DOI."""
     if not doi:
         return ""
     url = f"https://api.crossref.org/works/{doi}"
@@ -82,9 +127,11 @@ def fetch_orcid_works():
             data = json.loads(resp.read().decode("utf-8"))
     except Exception as e:
         print(f"Error fetching ORCID works: {e}")
-        return []
+        return [], []
 
-    pubs = []
+    journal_pubs = []
+    abstracts_only = []
+
     group = data.get("group", [])
     for g in group:
         summaries = g.get("work-summary", [])
@@ -93,12 +140,10 @@ def fetch_orcid_works():
         item = summaries[0]
         put_code = item.get("put-code")
         
-        # Title
         title = item.get("title", {}).get("title", {}).get("value", "").strip()
         if not title:
             continue
             
-        # Year
         pub_date = item.get("publication-date") or {}
         year = pub_date.get("year", {}).get("value")
         try:
@@ -106,21 +151,29 @@ def fetch_orcid_works():
         except ValueError:
             year = 0
             
-        # Journal
         journal = item.get("journal-title", {}).get("value", "") if item.get("journal-title") else ""
+        raw_type = item.get("type", "")
+        work_type = raw_type.replace("_", " ").title()
         
-        # Type
-        work_type = item.get("type", "").replace("_", " ").title()
-        
-        # DOI
         doi = ""
         ext_ids = item.get("external-ids", {}).get("external-id", [])
         for eid in ext_ids:
             if eid.get("external-id-type", "").lower() == "doi":
                 doi = clean_doi(eid.get("external-id-value", ""))
                 break
+
+        # Check if conference abstract
+        if is_meeting_abstract(raw_type, title, journal, doi):
+            abstracts_only.append({
+                "title": title,
+                "journal": journal,
+                "year": year,
+                "doi": doi,
+                "type": "Conference Abstract"
+            })
+            continue
         
-        # Resolve real authors
+        # Real authors for journal papers
         authors = ""
         if put_code:
             authors = fetch_work_contributors(put_code)
@@ -129,7 +182,7 @@ def fetch_orcid_works():
         if not authors:
             authors = "Marie Muller"
 
-        pubs.append({
+        journal_pubs.append({
             "title": title,
             "authors": authors,
             "journal": journal,
@@ -137,42 +190,66 @@ def fetch_orcid_works():
             "doi": doi,
             "type": work_type or "Journal"
         })
-    return pubs
+        
+    return journal_pubs, abstracts_only
 
 def load_manual_pubs():
     if not os.path.exists("manual_publications.json"):
-        return []
+        return [], []
     try:
         with open("manual_publications.json", "r", encoding="utf-8") as f:
             data = json.load(f)
+            journal_list = []
+            abstract_list = []
             for d in data:
                 d["doi"] = clean_doi(d.get("doi", ""))
-            return data
+                t_lower = d.get("type", "").lower()
+                if "abstract" in t_lower:
+                    abstract_list.append(d)
+                else:
+                    journal_list.append(d)
+            return journal_list, abstract_list
     except Exception as e:
         print(f"Error loading manual_publications.json: {e}")
-        return []
+        return [], []
 
 def main():
-    orcid_pubs = fetch_orcid_works()
-    manual_pubs = load_manual_pubs()
+    orcid_pubs, orcid_abstracts = fetch_orcid_works()
+    manual_pubs, manual_abstracts = load_manual_pubs()
 
-    # Track what is live in ORCID
+    # 1. Save conference abstracts to conference_abstracts_only.json
+    all_abstracts = manual_abstracts + orcid_abstracts
+    abstract_seen = set()
+    deduped_abstracts = []
+    for a in all_abstracts:
+        t_key = normalize_title(a.get("title", ""))
+        doi_key = a.get("doi", "")
+        key = doi_key if doi_key else t_key
+        if key and key not in abstract_seen:
+            abstract_seen.add(key)
+            deduped_abstracts.append(a)
+            
+    deduped_abstracts.sort(key=lambda x: x.get("year", 0), reverse=True)
+    with open("conference_abstracts_only.json", "w", encoding="utf-8") as f:
+        json.dump(deduped_abstracts, f, indent=2)
+    print(f"Logged {len(deduped_abstracts)} conference abstracts to conference_abstracts_only.json")
+
+    # 2. Check which manual journal papers are live in ORCID
     orcid_dois = {p["doi"] for p in orcid_pubs if p.get("doi")}
     orcid_titles = {normalize_title(p["title"]) for p in orcid_pubs if p.get("title")}
 
-    # Detect which manual entries are now active in ORCID
     in_orcid_now = []
     for p in manual_pubs:
         doi = p.get("doi")
         title_key = normalize_title(p.get("title", ""))
         
-        is_in_orcid = False
+        is_in = False
         if doi and doi in orcid_dois:
-            is_in_orcid = True
+            is_in = True
         elif title_key and title_key in orcid_titles:
-            is_in_orcid = True
+            is_in = True
             
-        if is_in_orcid:
+        if is_in:
             in_orcid_now.append({
                 "title": p.get("title"),
                 "year": p.get("year"),
@@ -180,12 +257,10 @@ def main():
                 "journal": p.get("journal")
             })
 
-    # Save to in_ORCID_now.json
     with open("in_ORCID_now.json", "w", encoding="utf-8") as f:
         json.dump(in_orcid_now, f, indent=2)
-    print(f"Updated in_ORCID_now.json with {len(in_orcid_now)} items confirmed in ORCID.")
 
-    # Merge for publications.html (manual entries take precedence)
+    # 3. Merge and deduplicate journal papers (manual entries take precedence)
     seen_dois = set()
     seen_titles = set()
     merged = []
@@ -212,14 +287,12 @@ def main():
             seen_titles.add(title_key)
         merged.append(p)
 
-    # Sort newest first
     merged.sort(key=lambda x: x.get("year", 0), reverse=True)
 
-    # Build HTML list items
+    # 4. Generate HTML list items for publications.html
     pub_items_html = []
     for p in merged:
         authors_raw = p.get("authors", "")
-        # Bold Marie Muller variations
         authors_html = re.sub(r"\b(Marie Muller|M\. Muller|Muller, M\.)\b", r"<b>\1</b>", authors_raw)
         doi_val = p.get("doi")
         doi_link = f'<a href="https://doi.org/{doi_val}" target="_blank" rel="noopener">DOI ↗</a>' if doi_val else ""
@@ -239,7 +312,7 @@ def main():
 
     full_list_html = "\n".join(pub_items_html)
 
-    # Update publications.html
+    # 5. Overwrite publications.html
     if os.path.exists("publications.html"):
         with open("publications.html", "r", encoding="utf-8") as f:
             content = f.read()
@@ -250,7 +323,7 @@ def main():
 
         with open("publications.html", "w", encoding="utf-8") as f:
             f.write(updated)
-        print("Successfully updated publications.html with merged publications!")
+        print(f"Successfully updated publications.html with {len(merged)} peer-reviewed journal papers!")
 
 if __name__ == "__main__":
     main()
