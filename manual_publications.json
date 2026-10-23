@@ -1,10 +1,18 @@
 [
   {
     "title": "Near Real-Time Quantitative Ultrasound Imaging Using an Ultra-Portable Handheld Ultrasound System",
-    "authors": "N. Burman, C. Hoerig, Marie Muller, and J. Mamou",
+    "authors": "Nitin Burman, Cameron Hoerig, Marie Muller, and Jonathan Mamou",
     "journal": "Journal of Visualized Experiments (JoVE), (236), e72706",
     "year": 2026,
     "doi": "10.3791/72706",
+    "type": "Journal"
+  },
+  {
+    "title": "Toward harmonizing ultrasound-based cortical bone characterization: A comparison of attenuation measurement techniques",
+    "authors": "Brett Austin McCandless, Kay Raum, and Marie Muller",
+    "journal": "The Journal of the Acoustical Society of America, 159(6), 5127–5139",
+    "year": 2026,
+    "doi": "10.1121/10.0035032",
     "type": "Journal"
   },
   {
@@ -16,6 +24,22 @@
     "type": "Journal"
   },
   {
+    "title": "Overview of Therapeutic Ultrasound Applications and Safety Considerations: 2024 Update",
+    "authors": "Kenneth B. Bader, Frederic Padilla, Kevin J. Haworth, Nicholas Ellens, Diane Dalecki, Douglas L. Miller, Keith A. Wear, et al., and Marie Muller",
+    "journal": "Journal of Ultrasound in Medicine, 44(3), 381–433",
+    "year": 2025,
+    "doi": "10.1002/jum.16611",
+    "type": "Review / Guideline"
+  },
+  {
+    "title": "Lung quantitative ultrasound to stage and monitor interstitial lung diseases",
+    "authors": "Azadeh Dashti, Roshan Roshankhah, Theresa Lye, John Blackwell, Stephanie Montgomery, Thomas Egan, Jonathan Mamou, and Marie Muller",
+    "journal": "Nature Scientific Reports, 14, 16350",
+    "year": 2024,
+    "doi": "10.1038/s41598-024-66390-6",
+    "type": "Journal"
+  },
+  {
     "title": "Design Optimization and Tradeoff Analysis of an Actuated Continuum Probe for Pulmonary Nodule Localization and Resection",
     "authors": "Madison D. McCullough, Marie Muller, Thomas M. Egan, and Gregory D. Buckner",
     "journal": "Bioengineering, 11(5), 417",
@@ -24,7 +48,23 @@
     "type": "Journal"
   },
   {
-    "title": "High-performance PMN-PT single-crystal-based 1-3 composite transducer integrated with a biopsy needle",
+    "title": "The respective and dependent effects of scattering and bone matrix absorption on ultrasound attenuation in cortical bone",
+    "authors": "Brett Austin McCandless, Kay Raum, and Marie Muller",
+    "journal": "Physics in Medicine & Biology, 69(11), 115018",
+    "year": 2024,
+    "doi": "10.1088/1361-6560/ad4343",
+    "type": "Journal"
+  },
+  {
+    "title": "AIUM Official Statement: Statement and Recommendations for Safety Assurance in Lung Ultrasound",
+    "authors": "American Institute of Ultrasound in Medicine Collaborative Working Group and Marie Muller",
+    "journal": "Journal of Ultrasound in Medicine, 43(1), 5–15",
+    "year": 2024,
+    "doi": "10.1002/jum.16314",
+    "type": "Statement / Guideline"
+  },
+  {
+    "title": "High-Performance PMN-PT Single-Crystal-Based 1-3 Composite Transducer Integrated with a Biopsy Needle",
     "authors": "Benjamin C. Kreager, Huaiyu Wu, Wei-Yi Chang, Sunho Moon, Josh Mitchell, Chang Peng, Chih-Chung Huang, Marie Muller, Jian Tian, and Xiaoning Jiang",
     "journal": "Biosensors, 14(2), 74",
     "year": 2024,
@@ -32,40 +72,32 @@
     "type": "Journal"
   },
   {
-    "title": "Lung quantitative ultrasound to stage and monitor interstitial lung diseases",
-    "authors": "Azadeh Dashti, Roshan Roshankhah, Theresa Lye, John Blackwell, Stephanie Montgomery, Thomas Egan, Jonathan Mamou, and Marie Muller",
-    "journal": "Scientific Reports, 14(1), 16350",
-    "year": 2024,
-    "doi": "10.1038/s41598-024-66632-1",
-    "type": "Journal"
-  },
-  {
-    "title": "The respective and dependent effects of scattering and bone matrix absorption on ultrasound attenuation in cortical bone",
-    "authors": "Brett Austin McCandless, Kay Raum, and Marie Muller",
-    "journal": "Physics in Medicine & Biology, 69(11), 115018",
-    "year": 2024,
-    "doi": "10.1088/1361-6560/ad43e2",
-    "type": "Journal"
-  },
-  {
-    "title": "Ultrasound characterization of cortical bone using Shannon entropy",
+    "title": "Ultrasonic characterization of cortical bone using Shannon Entropy",
     "authors": "Yasamin Karbalaeisadegh, Shanshan Yao, Yong Zhu, Quentin Grimal, and Marie Muller",
     "journal": "Ultrasound in Medicine & Biology, 49(8), 1824–1829",
     "year": 2023,
-    "doi": "10.1016/j.ultrasmedbio.2023.04.006",
+    "doi": "10.1016/j.ultrasmedbio.2023.03.018",
     "type": "Journal"
   },
   {
-    "title": "AIUM Official Statement: Statement and Recommendations for Safety Assurance in Lung Ultrasound",
-    "authors": "Collaborative Working Group and Marie Muller",
-    "journal": "Journal of Ultrasound in Medicine",
+    "title": "New international guidelines and consensus on the use of lung ultrasound",
+    "authors": "Libertario Demi, Frank Wolfram, Catherine Klersy, Annalisa De Silvestri, Virginia Valeria Ferretti, Marie Muller, Douglas Miller, et al.",
+    "journal": "Journal of Ultrasound in Medicine, 42(2), 309–344",
     "year": 2023,
-    "doi": "10.1002/jum.16314",
-    "type": "Guideline"
+    "doi": "10.1002/jum.16088",
+    "type": "Guideline / Consensus"
+  },
+  {
+    "title": "Numerical and experimental evaluation of low-intensity transcranial focused ultrasound wave propagation using human skulls for brain neuromodulation",
+    "authors": "Mengyue Chen, Chang Peng, Huaiyu Wu, Chih-Chung Huang, Taewon Kim, Zachary Traylor, Marie Muller, et al.",
+    "journal": "Medical Physics, 50(1), 38–49",
+    "year": 2023,
+    "doi": "10.1002/mp.16043",
+    "type": "Journal"
   },
   {
     "title": "Using ultrasonic attenuation in cortical bone to infer distributions on pore size",
-    "authors": "Rebekah D. White, Alen Alexanderian, Omid Yousefian, Yasamin Karbalaeisadegh, K. Bekele-Maxwell, A. Kasali, H. T. Banks, M. Talmant, Quentin Grimal, and Marie Muller",
+    "authors": "R. D. White, Alen Alexanderian, Omid Yousefian, Yasamin Karbalaeisadegh, K. Bekele-Maxwell, A. Kasali, H. T. Banks, M. Talmant, Quentin Grimal, and Marie Muller",
     "journal": "Applied Mathematical Modelling, 109, 819–832",
     "year": 2022,
     "doi": "10.1016/j.apm.2022.02.028",
@@ -81,34 +113,34 @@
   },
   {
     "title": "Introduction to the special issue on lung ultrasound",
-    "authors": "Libertario Demi and Marie Muller",
+    "authors": "Marie Muller and Libertario Demi",
     "journal": "The Journal of the Acoustical Society of America, 150(6), 4151–4154",
     "year": 2021,
-    "doi": "10.1121/10.0007490",
+    "doi": "10.1121/10.0008980",
     "type": "Editorial"
   },
   {
     "title": "Can We Use Ultrasound to Monitor and Diagnose Lung Diseases?",
     "authors": "Marie Muller and Libertario Demi",
-    "journal": "Acoustics Today, 17(4), 29",
+    "journal": "Acoustics Today, 17(4), 29–37",
     "year": 2021,
     "doi": "10.1121/AT.2021.17.4.29",
-    "type": "Review"
+    "type": "Journal"
   },
   {
     "title": "Detecting pulmonary nodules by using ultrasound multiple scattering",
     "authors": "Roshan Roshankhah, John Blackwell, Mir H. Ali, Behrooz Masuodi, Thomas Egan, and Marie Muller",
     "journal": "The Journal of the Acoustical Society of America, 150(6), 4095–4102",
     "year": 2021,
-    "doi": "10.1121/10.0007283",
+    "doi": "10.1121/10.0007284",
     "type": "Journal"
   },
   {
     "title": "Investigating training-test data splitting strategies for automated segmentation and scoring of COVID-19 lung ultrasound images",
-    "authors": "Roshan Roshankhah, Yasamin Karbalaeisadegh, Hastings Greer, Federico Mento, Gino Soldati, Andrea Smargiassi, Riccardo Inchingolo, et al., and Marie Muller",
+    "authors": "Roshan Roshankhah, Yasamin Karbalaeisadegh, H. Greer, F. Mento, G. Soldati, A. Smargiassi, et al., and Marie Muller",
     "journal": "The Journal of the Acoustical Society of America, 150(6), 4118–4127",
     "year": 2021,
-    "doi": "10.1121/10.0007293",
+    "doi": "10.1121/10.0007279",
     "type": "Journal"
   },
   {
@@ -116,7 +148,15 @@
     "authors": "Theresa H. Lye, Roshan Roshankhah, Yasamin Karbalaeisadegh, Stephanie A. Montgomery, Thomas M. Egan, Marie Muller, and Jonathan Mamou",
     "journal": "The Journal of the Acoustical Society of America, 150(1), 183–192",
     "year": 2021,
-    "doi": "10.1121/10.0005522",
+    "doi": "10.1121/10.0005518",
+    "type": "Journal"
+  },
+  {
+    "title": "Inferring pore radius and density from ultrasonic attenuation using physics-based modeling",
+    "authors": "R. D. White, Omid Yousefian, H. T. Banks, Alen Alexanderian, and Marie Muller",
+    "journal": "The Journal of the Acoustical Society of America, 149(1), 340–347",
+    "year": 2021,
+    "doi": "10.1121/10.0003328",
     "type": "Journal"
   },
   {
@@ -124,47 +164,47 @@
     "authors": "Omid Yousefian, Yasamin Karbalaeisadegh, and Marie Muller",
     "journal": "Physics in Medicine & Biology, 66(3), 035026",
     "year": 2021,
-    "doi": "10.1088/1361-6560/abd5b7",
+    "doi": "10.1088/1361-6560/abd5b0",
     "type": "Journal"
   },
   {
     "title": "Ultrasound Imaging: A Silent Hero in COVID-19 and Lung Diagnostics",
-    "authors": "A. Yu, Libertario Demi, Marie Muller, and Q. Zhou",
+    "authors": "Alfred C. H. Yu, Libertario Demi, Marie Muller, and Qifa Zhou",
     "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(11), 2194–2196",
     "year": 2020,
-    "doi": "10.1109/TUFFC.2020.3031023",
-    "type": "Editorial"
+    "doi": "10.1109/TUFFC.2020.3023259",
+    "type": "Editorial / Review"
   },
   {
     "title": "In Vivo Assessment of Pulmonary Fibrosis and Pulmonary Edema in Rodents Using Ultrasound Multiple Scattering",
     "authors": "Kaustav Mohanty, Yasamin Karbalaeisadegh, John Blackwell, Mir Ali, Behrooz Masuodi, Thomas Egan, and Marie Muller",
     "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(11), 2274–2280",
     "year": 2020,
-    "doi": "10.1109/TUFFC.2020.2989505",
+    "doi": "10.1109/TUFFC.2020.3004481",
     "type": "Journal"
   },
   {
     "title": "Lung Ultrasound for Treatment of Patients With COVID-19: Please Report Your Settings and Mechanical Index",
-    "authors": "I. M. Rosado-Mendez, Andrea Smargiassi, Riccardo Inchingolo, Gino Soldati, Marie Muller, and Libertario Demi",
-    "journal": "Journal of Ultrasound in Medicine",
+    "authors": "Ivan M. Rosado-Mendez, Andrea Smargiassi, Riccardo Inchingolo, Gino Soldati, Marie Muller, and Libertario Demi",
+    "journal": "Journal of Ultrasound in Medicine, 39(12), 2471–2472",
     "year": 2020,
-    "doi": "10.1002/jum.15486",
+    "doi": "10.1002/jum.15349",
     "type": "Letter"
   },
   {
     "title": "Lesion Imaging and Target detection in Multiple Scattering (LITMUS) Media",
     "authors": "Kaustav Mohanty, Roshan Roshankhah, Micah Ulrich, and Marie Muller",
-    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control",
+    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(11), 2263–2273",
     "year": 2020,
-    "doi": "10.1109/TUFFC.2020.3013895",
+    "doi": "10.1109/TUFFC.2020.3003009",
     "type": "Journal"
   },
   {
     "title": "Ultrasound Enhanced Synthetic Platelet Therapy for Augmented Wound Repair",
-    "authors": "S. Nandi, Kaustav Mohanty, K. Nellenbach, M. Erb, Marie Muller, and Ashley C. Brown",
+    "authors": "Supriya Nandi, Kaustav Mohanty, Kimberly Nellenbach, Margaret Erb, Marie Muller, and Ashley C. Brown",
     "journal": "ACS Biomaterials Science & Engineering, 6(5), 3026–3036",
     "year": 2020,
-    "doi": "10.1021/acsbiomaterials.0c00222",
+    "doi": "10.1021/acsbiomaterials.0c00185",
     "type": "Journal"
   },
   {
@@ -174,6 +214,22 @@
     "year": 2020,
     "doi": "10.3390/app10020462",
     "type": "Review"
+  },
+  {
+    "title": "Evaluation of structural anisotropy in a porous titanium medium mimicking trabecular bone structure using mode-converted ultrasonic scattering",
+    "authors": "Hualong Du, Omid Yousefian, Tim Horn, and Marie Muller",
+    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(5), 1017–1024",
+    "year": 2020,
+    "doi": "10.1109/TUFFC.2019.2963162",
+    "type": "Journal"
+  },
+  {
+    "title": "Artificial neural network to estimate micro-architectural properties of cortical bone using ultrasonic attenuation: A 2-D numerical study",
+    "authors": "Kaustav Mohanty, Omid Yousefian, Yasamin Karbalaeisadegh, Micah Ulrich, Quentin Grimal, and Marie Muller",
+    "journal": "Computers in Biology and Medicine, 114, 103457",
+    "year": 2019,
+    "doi": "10.1016/j.compbiomed.2019.103457",
+    "type": "Journal"
   },
   {
     "title": "Acoustic diffusion constant of cortical bone: Numerical simulation study of the effect of pore size and pore density on multiple scattering",
@@ -186,57 +242,73 @@
   {
     "title": "Modeling Ultrasound Attenuation in Porous Structures with Mono-disperse Random Pore Distributions using the Independent Scattering Approximation: A 2D simulation study",
     "authors": "Omid Yousefian, Yasamin Karbalaeisadegh, and Marie Muller",
-    "journal": "Physics in Medicine & Biology",
+    "journal": "Physics in Medicine & Biology, 64(21), 215015",
     "year": 2019,
-    "doi": "10.1088/1361-6560/ab47cb",
+    "doi": "10.1088/1361-6560/ab4397",
     "type": "Journal"
   },
   {
     "title": "Ultrasound multiple scattering with microbubbles can differentiate between tumor and healthy tissue in vivo",
-    "authors": "Kaustav Mohanty, Virginie Papadopoulou, I. G. Newsome, Sarah Shelton, Paul A. Dayton, and Marie Muller",
-    "journal": "Physics in Medicine & Biology, 64(24), 245012",
+    "authors": "Kaustav Mohanty, Virginie Papadopoulou, Ian G. Newsome, Scott Shelton, Paul A. Dayton, and Marie Muller",
+    "journal": "Physics in Medicine & Biology, 64(14), 145009",
     "year": 2019,
-    "doi": "10.1088/1361-6560/ab549f",
+    "doi": "10.1088/1361-6560/ab2786",
     "type": "Journal"
   },
   {
     "title": "The effect of pore size and density on ultrasonic attenuation in porous structures with mono-disperse random pore distribution: A two-dimensional in-silico study",
-    "authors": "Omid Yousefian, Rebekah D. White, Yasamin Karbalaeisadegh, H. T. Banks, and Marie Muller",
+    "authors": "Omid Yousefian, R. D. White, Yasamin Karbalaeisadegh, H. T. Banks, and Marie Muller",
     "journal": "The Journal of the Acoustical Society of America, 144(2), 709–719",
     "year": 2018,
-    "doi": "10.1121/1.5049580",
+    "doi": "10.1121/1.5049801",
     "type": "Journal"
   },
   {
     "title": "1-Dimensional quantitative micro-architecture mapping of multiple scattering media using backscattering of ultrasound in the near-field: Application to nodule imaging in the lungs",
-    "authors": "Kaustav Mohanty, John Blackwell, S. B. Masuodi, Mir H. Ali, Thomas Egan, and Marie Muller",
+    "authors": "Kaustav Mohanty, John Blackwell, S. Behrooz Masuodi, Mir H. Ali, Thomas Egan, and Marie Muller",
     "journal": "Applied Physics Letters, 113(3), 033704",
     "year": 2018,
-    "doi": "10.1063/1.5037130",
+    "doi": "10.1063/1.5034107",
     "type": "Journal"
   },
   {
     "title": "Observation of self-bending and focused ultrasound beams in the MHz range",
     "authors": "Kaustav Mohanty, S. Mahajan, Gianmarco Pinton, Marie Muller, and Yun Jing",
-    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control",
+    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 65(8), 1460–1467",
     "year": 2018,
-    "doi": "10.1109/TUFFC.2018.2844738",
+    "doi": "10.1109/TUFFC.2018.2846430",
+    "type": "Journal"
+  },
+  {
+    "title": "Study of Poly (N-isopropylacrylamide-co-acrylic acid)(pNIPAM) Microgel Particle Induced Deformations of Tissue-Mimicking Phantom by Ultrasound Stimulation",
+    "authors": "A. Joshi, Supriya Nandi, D. Chester, Ashley C. Brown, and Marie Muller",
+    "journal": "Langmuir, 34(4), 1457–1465",
+    "year": 2018,
+    "doi": "10.1021/acs.langmuir.7b03650",
     "type": "Journal"
   },
   {
     "title": "Microstructural characterization of trabecular bone using ultrasonic backscattering and diffusion parameters",
     "authors": "Hualong Du, Kaustav Mohanty, and Marie Muller",
-    "journal": "JASA Express Letters, 141(5), EL490",
+    "journal": "The Journal of the Acoustical Society of America (JASA Express Letters), 141(5), EL491–EL497",
     "year": 2017,
     "doi": "10.1121/1.4983637",
     "type": "Journal"
   },
   {
     "title": "An iterative Fullwave simulation approach to multiple scattering in media with randomly distributed micro-bubbles",
-    "authors": "A. Joshi, B. Lindsey, Paul A. Dayton, Gianmarco Pinton, and Marie Muller",
-    "journal": "Physics in Medicine and Biology, 62(10), 4202",
+    "authors": "A. Joshi, B. Lindsey, Paul Dayton, Gianmarco Pinton, and Marie Muller",
+    "journal": "Physics in Medicine & Biology, 62(10), 4202–4219",
     "year": 2017,
-    "doi": "10.1088/1361-6560/aa6b88",
+    "doi": "10.1088/1361-6560/aa6b96",
+    "type": "Journal"
+  },
+  {
+    "title": "Characterization of the lung parenchyma using ultrasound multiple scattering",
+    "authors": "Kaustav Mohanty, John Blackwell, Thomas Egan, and Marie Muller",
+    "journal": "Ultrasound in Medicine & Biology, 43(5), 993–1003",
+    "year": 2017,
+    "doi": "10.1016/j.ultrasmedbio.2017.01.011",
     "type": "Journal"
   }
 ]
