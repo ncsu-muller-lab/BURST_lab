@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Publications — BURST Lab</title>
-  <meta name="description" content="Peer-reviewed journal publications, conference proceedings, and patents from the BURST Lab at NC State." />
+  <title>Publications &amp; Grants — BURST Lab</title>
+  <meta name="description" content="Peer-reviewed publications and sponsored research grants at the BURST Lab, NC State MAE." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +12,47 @@
 
   <link rel="stylesheet" href="./assets/css/style.css" />
   <style>
-    .pub-list {
+    /* View Sub-Tabs */
+    .view-tabs {
+      display: inline-flex;
+      background: #e2e8f0;
+      padding: 4px;
+      border-radius: var(--radius);
+      margin-top: 1.5rem;
+      gap: 4px;
+    }
+    .view-tab {
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 0.6rem 1.4rem;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink-soft);
+      border-radius: calc(var(--radius) - 2px);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .view-tab:hover {
+      color: var(--ink);
+    }
+    .view-tab.active {
+      background: #ffffff;
+      color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Panes */
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; animation: fadeIn 0.2s ease-in-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Publications List */
+    .pub-list, .grant-list {
       list-style: none;
       padding: 0;
       margin: 2rem 0 0;
@@ -42,19 +82,9 @@
       color: var(--ink);
       line-height: 1.38;
     }
-    .pub-authors {
-      font-size: 0.92rem;
-      color: var(--ink-soft);
-    }
-    .pub-authors b {
-      color: var(--ink);
-      font-weight: 600;
-    }
-    .pub-journal {
-      font-size: 0.88rem;
-      color: var(--ink-muted);
-      font-style: italic;
-    }
+    .pub-authors { font-size: 0.92rem; color: var(--ink-soft); }
+    .pub-authors b { color: var(--ink); font-weight: 600; }
+    .pub-journal { font-size: 0.88rem; color: var(--ink-muted); font-style: italic; }
     .pub-links {
       display: flex;
       align-items: center;
@@ -90,6 +120,115 @@
       border-radius: 3px;
       font-weight: 600;
     }
+
+    /* Accordion Grants Styling */
+    .grant-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .grant-card:hover {
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow-md);
+    }
+    .grant-header {
+      padding: 1.25rem 1.65rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.25rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .grant-header-left { flex: 1; }
+    .grant-title {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.4;
+      margin-bottom: 0.5rem;
+    }
+    .grant-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .grant-badge {
+      font-size: 0.7rem;
+      color: var(--accent);
+      background: var(--accent-light);
+      border: 1px solid var(--accent-border);
+      padding: 1px 7px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .grant-amount {
+      color: #047857;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+    .grant-agency {
+      color: var(--ink-muted);
+      background: var(--bg);
+      border: 1px solid var(--line);
+      padding: 1px 7px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+    .grant-toggle-btn {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-border);
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      line-height: 1;
+    }
+    .grant-card.is-expanded .grant-toggle-btn {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+      transform: rotate(45deg); /* Rotates + into an x/minus */
+    }
+    .grant-body {
+      display: none;
+      padding: 0 1.65rem 1.4rem;
+      border-top: 1px solid #f1f5f9;
+      margin-top: 0.5rem;
+      padding-top: 1.25rem;
+      font-size: 0.94rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    .grant-card.is-expanded .grant-body {
+      display: block;
+      animation: fadeIn 0.2s ease;
+    }
+    .grant-detail-line {
+      margin-bottom: 0.85rem;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+    .grant-detail-line b { color: var(--ink); }
   </style>
 </head>
 <body>
@@ -116,18 +255,30 @@
 
     <header class="page-header">
       <div class="wrap">
-        <span class="eyebrow">Research Output</span>
-        <h1>Publications.</h1>
-        <p>
+        <span class="eyebrow">Research &amp; Funding</span>
+        <h1 id="page-heading">Publications.</h1>
+        <p id="page-subtext">
           Peer-reviewed journal articles, conference papers, and guidelines from our lab, sorted with the latest research first. You can also view verified citation records on <a href="https://orcid.org/0000-0002-5662-0650" target="_blank" rel="noopener">ORCID (0000-0002-5662-0650) ↗</a> and <a href="https://scholar.google.com/citations?user=9_iPoNoAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar ↗</a>.
         </p>
+
+        <!-- SUB-TABS (Publications vs Grants) -->
+        <div class="view-tabs" role="tablist" aria-label="Publications and Grants">
+          <button class="view-tab active" id="tab-btn-pubs" role="tab" aria-selected="true" aria-controls="pane-pubs">
+            Publications
+          </button>
+          <button class="view-tab" id="tab-btn-grants" role="tab" aria-selected="false" aria-controls="pane-grants">
+            Sponsored Grants
+          </button>
+        </div>
       </div>
     </header>
 
     <section class="section">
       <div class="wrap">
 
-        <ul class="pub-list">
+        <!-- TAB 1: PUBLICATIONS -->
+        <div class="tab-pane active" id="pane-pubs" role="tabpanel" aria-labelledby="tab-btn-pubs">
+          <ul class="pub-list">
           <li class="pub-item">
             <div class="pub-title">Near Real-Time Quantitative Ultrasound Imaging Using an Ultra-Portable Handheld Ultrasound System</div>
             <div class="pub-authors">N. Burman, C. Hoerig, <b>Marie Muller</b>, and J. Mamou</div>
@@ -639,6 +790,173 @@
             </div>
           </li>
           </ul>
+        </div>
+
+        <!-- TAB 2: SPONSORED GRANTS -->
+        <div class="tab-pane" id="pane-grants" role="tabpanel" aria-labelledby="tab-btn-grants">
+          <ul class="grant-list">
+            <li class="grant-card">
+              <div class="grant-header">
+                <div class="grant-header-left">
+                  <div class="grant-title">Quantitative Ultrasound to Stage and Monitor Interstitial Lung Diseases</div>
+                  <div class="grant-meta">
+                    <span class="grant-badge">Active Grant</span>
+                    <span class="grant-agency">National Institutes of Health (NIH)</span>
+                    <span class="grant-amount">$2,650,000</span>
+                    <span>2024 – 2029</span>
+                  </div>
+                </div>
+                <button class="grant-toggle-btn" aria-label="Expand grant details">+</button>
+              </div>
+              <div class="grant-body">
+                <div class="grant-detail-line"><b>Investigators:</b> Dr. Marie Muller (NC State MAE) & Dr. Jonathan Mamou (Albert Einstein College of Medicine)</div>
+                <div class="grant-detail-line"><b>Funding Agency:</b> National Institutes of Health (NIH)</div>
+                <p>Interstitial lung diseases (ILD) involve progressive scarring of lung tissue that severely impairs respiratory function. Currently, disease diagnosis and tracking rely on high-resolution computed tomography (HRCT), which exposes vulnerable patients to cumulative ionizing radiation and is constrained to specialized hospital facilities.</p>
+                <ul><li>Develop non-invasive, radiation-free point-of-care quantitative ultrasound (QUS) biomarkers based on acoustic backscattering and multiple scattering physics.</li><li>Quantify sub-wavelength tissue alterations in parenchymal architecture to stage disease severity.</li><li>Provide accessible bedside monitoring tools to assess real-time patient response to antifibrotic therapeutics.</li></ul>
+              </div>
+            </li>
+            <li class="grant-card">
+              <div class="grant-header">
+                <div class="grant-header-left">
+                  <div class="grant-title">Quantitative Assessment of Angiogenesis Using Ultrasound Multiple Scattering</div>
+                  <div class="grant-meta">
+                    <span class="grant-badge">Active Grant</span>
+                    <span class="grant-agency">National Institutes of Health (NIH)</span>
+                    <span class="grant-amount">$2,328,411.00</span>
+                    <span>06/15/2023 – 05/31/2028</span>
+                  </div>
+                </div>
+                <button class="grant-toggle-btn" aria-label="Expand grant details">+</button>
+              </div>
+              <div class="grant-body">
+                <div class="grant-detail-line"><b>Investigators:</b> Dr. Marie Muller (NC State University)</div>
+                <div class="grant-detail-line"><b>Funding Agency:</b> National Institutes of Health (NIH)</div>
+                <p>Angiogenesis plays a critical role in diseases such as cancer, atherosclerosis (vasa vasorum), and tissue wound healing. While conventional Doppler, super-resolution ultrasound, and acoustic angiography allow visualization of vessel morphology, they do not provide quantitative structural metrics.</p>
+                <ul><li>Develop and optimize quantitative ultrasound methods to assess microvascular density and anisotropy non-invasively.</li><li>Establish proof of concept in preclinical rodent models that multiple scattering differentiates tumor malignancy from healthy tissue.</li><li>Translate technology into preliminary human clinical studies to benchmark diagnostic performance against standard point-of-care ultrasound.</li></ul>
+              </div>
+            </li>
+            <li class="grant-card">
+              <div class="grant-header">
+                <div class="grant-header-left">
+                  <div class="grant-title">Building AI Expertise to Transform Quantitative Ultrasound and Reveal Hidden Tissue Information</div>
+                  <div class="grant-meta">
+                    <span class="grant-badge">Fellowship Award</span>
+                    <span class="grant-agency">NC State College of Engineering</span>
+                    
+                    <span>2026 – Present</span>
+                  </div>
+                </div>
+                <button class="grant-toggle-btn" aria-label="Expand grant details">+</button>
+              </div>
+              <div class="grant-body">
+                <div class="grant-detail-line"><b>Investigators:</b> Dr. Marie Muller</div>
+                <div class="grant-detail-line"><b>Funding Agency:</b> NC State College of Engineering</div>
+                <p>Inaugural Dean's Applied AI Faculty Scholarly Fellowship project integrating physics-based acoustic scattering models with modern machine learning architectures to extract microstructural tissue features from raw ultrasonic waveforms.</p>
+                
+              </div>
+            </li>
+            <li class="grant-card">
+              <div class="grant-header">
+                <div class="grant-header-left">
+                  <div class="grant-title">Innovative Ultrasonic Methods for the Diagnosis and Monitoring of Pulmonary Fibrosis</div>
+                  <div class="grant-meta">
+                    <span class="grant-badge">Completed Award</span>
+                    <span class="grant-agency">National Institutes of Health (NIH)</span>
+                    
+                    
+                  </div>
+                </div>
+                <button class="grant-toggle-btn" aria-label="Expand grant details">+</button>
+              </div>
+              <div class="grant-body">
+                <div class="grant-detail-line"><b>Investigators:</b> Dr. Marie Muller (NC State MAE)</div>
+                <div class="grant-detail-line"><b>Funding Agency:</b> National Institutes of Health (NIH)</div>
+                <p>Pulmonary fibrosis leads to alveolar destruction and dense collagen deposition. Standard pulmonary function tests detect functional loss only after irreversible architectural damage has occurred. This project investigated ultrasound wave propagation through multiple-scattering sub-pleural lung tissue to detect fibrotic remodeling prior to macroscopic CT manifestation.</p>
+                
+              </div>
+            </li>
+            <li class="grant-card">
+              <div class="grant-header">
+                <div class="grant-header-left">
+                  <div class="grant-title">Ultrasound Enhanced Platelet-Like Particle Therapy for Accelerated Wound Repair</div>
+                  <div class="grant-meta">
+                    <span class="grant-badge">Sponsored Research</span>
+                    <span class="grant-agency">National Institutes of Health / Collaborative</span>
+                    
+                    
+                  </div>
+                </div>
+                <button class="grant-toggle-btn" aria-label="Expand grant details">+</button>
+              </div>
+              <div class="grant-body">
+                <div class="grant-detail-line"><b>Investigators:</b> Dr. Marie Muller & Dr. Ashley C. Brown (UNC / NC State Joint BME)</div>
+                <div class="grant-detail-line"><b>Funding Agency:</b> National Institutes of Health / Collaborative</div>
+                <p>Integrating synthetic platelet-like microgels (PLPs) with targeted ultrasonic wave stimulation to enhance hemostasis, clot contraction, and accelerated tissue regeneration. This project explores acoustic radiation force and microgel deformation mechanics to mechanically trigger synthetic platelet activation at injury sites.</p>
+                
+              </div>
+            </li>
+            <li class="grant-card">
+              <div class="grant-header">
+                <div class="grant-header-left">
+                  <div class="grant-title">Ultrasonic Characterization of Atherosclerotic Plaque Using Multiple Scattering</div>
+                  <div class="grant-meta">
+                    <span class="grant-badge">Completed Award</span>
+                    <span class="grant-agency">National Institutes of Health (NIH)</span>
+                    
+                    
+                  </div>
+                </div>
+                <button class="grant-toggle-btn" aria-label="Expand grant details">+</button>
+              </div>
+              <div class="grant-body">
+                <div class="grant-detail-line"><b>Investigators:</b> Dr. Marie Muller (Co-Investigator: Dr. Xiaoning Jiang)</div>
+                <div class="grant-detail-line"><b>Funding Agency:</b> National Institutes of Health (NIH)</div>
+                <p>Rupture of vulnerable atherosclerotic plaques in carotid and coronary arteries is the primary trigger of strokes and myocardial infarctions. Standard B-mode imaging evaluates luminal stenosis percentage but fails to accurately assess plaque composition and rupture vulnerability. This study developed specialized transducer arrays and multiple-scattering signal processing algorithms to quantify the scattering mean free path in carotid plaques.</p>
+                
+              </div>
+            </li>
+            <li class="grant-card">
+              <div class="grant-header">
+                <div class="grant-header-left">
+                  <div class="grant-title">Assessment of Bone Micro-Structure Using Ultrasonic Methods</div>
+                  <div class="grant-meta">
+                    <span class="grant-badge">Completed Award</span>
+                    <span class="grant-agency">National Institutes of Health (NIH)</span>
+                    <span class="grant-amount">$139,195.00</span>
+                    <span>08/02/2016 – 05/31/2019</span>
+                  </div>
+                </div>
+                <button class="grant-toggle-btn" aria-label="Expand grant details">+</button>
+              </div>
+              <div class="grant-body">
+                <div class="grant-detail-line"><b>Investigators:</b> Dr. Marie Muller (NC State MAE)</div>
+                <div class="grant-detail-line"><b>Funding Agency:</b> National Institutes of Health (NIH)</div>
+                <p>Osteoporosis modifies microarchitecture and bone density, and assessment of both is required to predict fracture risk accurately. We developed a quantitative, non-invasive ultrasound method using multiple scattering in cortical and trabecular bone.</p>
+                <ul><li>Establish quantitative relationships between bone micro-architectural properties and ultrasound multiple scattering parameters.</li><li>Validate numerical and experimental wave models across synthetic bone phantoms and biological specimens.</li><li>Combine micro-structural parameters with bone mineral density metrics to establish improved diagnostic predictors of fracture risk.</li></ul>
+              </div>
+            </li>
+            <li class="grant-card">
+              <div class="grant-header">
+                <div class="grant-header-left">
+                  <div class="grant-title">Quantitative Characterization of Trabecular Bone Micro-Architecture Using Ultrasound: Applications to Spaceflight Osteopenia</div>
+                  <div class="grant-meta">
+                    <span class="grant-badge">Sponsored Award</span>
+                    <span class="grant-agency">NC Space Grant Consortium / NASA</span>
+                    
+                    
+                  </div>
+                </div>
+                <button class="grant-toggle-btn" aria-label="Expand grant details">+</button>
+              </div>
+              <div class="grant-body">
+                <div class="grant-detail-line"><b>Investigators:</b> Dr. Marie Muller (NC State MAE)</div>
+                <div class="grant-detail-line"><b>Funding Agency:</b> NC Space Grant Consortium / NASA</div>
+                <p>Astronauts experience accelerated loss of bone mineral density and deterioration of trabecular architecture during long-duration spaceflight. This project formulated lightweight, radiation-free ultrasonic monitoring devices to monitor microgravity-induced skeletal disuse and evaluate the efficacy of exercise and nutritional countermeasures during extended orbital missions.</p>
+                
+              </div>
+            </li>
+          </ul>
+        </div>
 
       </div>
     </section>
@@ -685,12 +1003,58 @@
   </footer>
 
   <script>
-    const btn = document.querySelector('.nav-toggle');
-    const links = document.getElementById('nav-links');
-    if (btn && links) {
-      btn.addEventListener('click', () => {
-        const open = links.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', open);
+    // Sub-Tabs Switching (Publications vs Grants)
+    const pubBtn = document.getElementById('tab-btn-pubs');
+    const grantBtn = document.getElementById('tab-btn-grants');
+    const pubPane = document.getElementById('pane-pubs');
+    const grantPane = document.getElementById('pane-grants');
+    const heading = document.getElementById('page-heading');
+    const subtext = document.getElementById('page-subtext');
+
+    pubBtn.addEventListener('click', () => {
+      pubBtn.classList.add('active');
+      pubBtn.setAttribute('aria-selected', 'true');
+      grantBtn.classList.remove('active');
+      grantBtn.setAttribute('aria-selected', 'false');
+
+      pubPane.classList.add('active');
+      grantPane.classList.remove('active');
+
+      heading.textContent = 'Publications.';
+      subtext.innerHTML = 'Peer-reviewed journal articles, conference papers, and guidelines from our lab, sorted with the latest research first. You can also view verified citation records on <a href="https://orcid.org/0000-0002-5662-0650" target="_blank" rel="noopener">ORCID (0000-0002-5662-0650) ↗</a> and <a href="https://scholar.google.com/citations?user=9_iPoNoAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar ↗</a>.';
+    });
+
+    grantBtn.addEventListener('click', () => {
+      grantBtn.classList.add('active');
+      grantBtn.setAttribute('aria-selected', 'true');
+      pubBtn.classList.remove('active');
+      pubBtn.setAttribute('aria-selected', 'false');
+
+      grantPane.classList.add('active');
+      pubPane.classList.remove('active');
+
+      heading.textContent = 'Sponsored Grants.';
+      subtext.innerHTML = 'Major federal, foundation, and clinical sponsored research awards granted to Dr. Marie Muller and the BURST Lab.';
+    });
+
+    // Accordion Expand/Collapse for Grants (Delegated Event)
+    document.addEventListener('click', (e) => {
+      const header = e.target.closest('.grant-header');
+      if (header) {
+        const card = header.closest('.grant-card');
+        const isExpanded = card.classList.toggle('is-expanded');
+        const btn = card.querySelector('.grant-toggle-btn');
+        if (btn) btn.setAttribute('aria-expanded', isExpanded);
+      }
+    });
+
+    // Mobile nav hamburger toggle
+    const navBtn = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (navBtn && navLinks) {
+      navBtn.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('is-open');
+        navBtn.setAttribute('aria-expanded', open);
       });
     }
   </script>
