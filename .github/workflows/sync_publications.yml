@@ -29,13 +29,3 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add publications.html in_ORCID_now.json conference_abstracts_only.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-sync publications & grants" && git push)
-
-- name: Fetch member photos from WordPress
-        run: python scripts/fetch_photos.py
-
-      - name: Commit photos
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/img/*.jpg
-          git diff --staged --quiet || (git commit -m "Add downloaded lab member headshots" && git push)
