@@ -1,5 +1,20 @@
 [
   {
+    "title": "Integrating Quantitative Ultrasound Sensing and Platelet-Like Particle Stimulation in a Wearable Textile Patch for Wound Healing",
+    "status": "Active Grant",
+    "agency": "Institute for Connected Sensor-Systems (IConS)",
+    "amount": "Funded (GRA & Research Support)",
+    "period": "07/01/2026 – 06/30/2027",
+    "pi": "Dr. Marie Muller (MAE), Dr. Ashley Brown (BME), Dr. Jessica Gluck (Textiles), Dr. Mansoor Haider (Mathematics)",
+    "description": "Cross-college interdisciplinary collaboration between the College of Engineering, Wilson College of Textiles, and College of Sciences developing a smart wearable textile patch that integrates synthetic platelet-like particles (PLPs) with acoustic radiation force (ARF) stimulation and real-time Quantitative Ultrasound (QUS) sensing for closed-loop wound healing and clot microstructure monitoring.",
+    "aims": [
+      "Elucidate physical mechanisms underlying ultrasound stimulation of PLPs using coupled mechanics and machine learning models.",
+      "Establish QUS parameters for real-time monitoring of fibrin clot microstructure and retraction dynamics.",
+      "Fabricate and optimize an electrospun nanofibrous textile patch combining therapeutic PLP delivery and acoustic sensing."
+    ]
+  }
+  
+  {
     "title": "Quantitative Ultrasound to Stage and Monitor Interstitial Lung Diseases",
     "status": "Active Grant",
     "agency": "National Institutes of Health (NIH)",
