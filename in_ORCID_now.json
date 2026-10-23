@@ -1,11 +1,5 @@
 [
   {
-    "title": "Characterizing random complex biological media by quantifying ultrasound multiple scattering",
-    "year": 2025,
-    "doi": "10.3389/facou.2025.1545057",
-    "journal": "Frontiers in Acoustics, 3, 1545057"
-  },
-  {
     "title": "Design Optimization and Tradeoff Analysis of an Actuated Continuum Probe for Pulmonary Nodule Localization and Resection",
     "year": 2024,
     "doi": "10.3390/bioengineering11050417",
@@ -48,12 +42,6 @@
     "journal": "Applied Sciences, 12(10), 5283"
   },
   {
-    "title": "Introduction to the special issue on lung ultrasound",
-    "year": 2021,
-    "doi": "10.1121/10.0007490",
-    "journal": "The Journal of the Acoustical Society of America, 150(6), 4151\u20134154"
-  },
-  {
     "title": "Detecting pulmonary nodules by using ultrasound multiple scattering",
     "year": 2021,
     "doi": "10.1121/10.0007283",
@@ -66,22 +54,10 @@
     "journal": "The Journal of the Acoustical Society of America, 150(6), 4118\u20134127"
   },
   {
-    "title": "Ultrasound Imaging: A Silent Hero in COVID-19 and Lung Diagnostics",
-    "year": 2020,
-    "doi": "10.1109/tuffc.2020.3031023",
-    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(11), 2194\u20132196"
-  },
-  {
     "title": "In Vivo Assessment of Pulmonary Fibrosis and Pulmonary Edema in Rodents Using Ultrasound Multiple Scattering",
     "year": 2020,
     "doi": "10.1109/tuffc.2020.2989505",
     "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(11), 2274\u20132280"
-  },
-  {
-    "title": "Lung Ultrasound for Treatment of Patients With COVID-19: Please Report Your Settings and Mechanical Index",
-    "year": 2020,
-    "doi": "10.1002/jum.15486",
-    "journal": "Journal of Ultrasound in Medicine"
   },
   {
     "title": "Lesion Imaging and Target detection in Multiple Scattering (LITMUS) Media",
@@ -94,12 +70,6 @@
     "year": 2020,
     "doi": "10.1021/acsbiomaterials.0c00222",
     "journal": "ACS Biomaterials Science & Engineering, 6(5), 3026\u20133036"
-  },
-  {
-    "title": "Lung ultrasound imaging, a technical review",
-    "year": 2020,
-    "doi": "10.3390/app10020462",
-    "journal": "Applied Sciences, 10(2), 462"
   },
   {
     "title": "Acoustic diffusion constant of cortical bone: Numerical simulation study of the effect of pore size and pore density on multiple scattering",
