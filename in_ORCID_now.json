@@ -1,33 +1,27 @@
 [
   {
+    "title": "Lung quantitative ultrasound to stage and monitor interstitial lung diseases",
+    "year": 2024,
+    "doi": "10.1038/s41598-024-66390-6",
+    "journal": "Nature Scientific Reports, 14, 16350"
+  },
+  {
     "title": "Design Optimization and Tradeoff Analysis of an Actuated Continuum Probe for Pulmonary Nodule Localization and Resection",
     "year": 2024,
     "doi": "10.3390/bioengineering11050417",
     "journal": "Bioengineering, 11(5), 417"
   },
   {
-    "title": "High-performance PMN-PT single-crystal-based 1-3 composite transducer integrated with a biopsy needle",
-    "year": 2024,
-    "doi": "10.3390/bios14020074",
-    "journal": "Biosensors, 14(2), 74"
-  },
-  {
-    "title": "Lung quantitative ultrasound to stage and monitor interstitial lung diseases",
-    "year": 2024,
-    "doi": "10.1038/s41598-024-66632-1",
-    "journal": "Scientific Reports, 14(1), 16350"
-  },
-  {
     "title": "The respective and dependent effects of scattering and bone matrix absorption on ultrasound attenuation in cortical bone",
     "year": 2024,
-    "doi": "10.1088/1361-6560/ad43e2",
+    "doi": "10.1088/1361-6560/ad4343",
     "journal": "Physics in Medicine & Biology, 69(11), 115018"
   },
   {
-    "title": "Ultrasound characterization of cortical bone using Shannon entropy",
-    "year": 2023,
-    "doi": "10.1016/j.ultrasmedbio.2023.04.006",
-    "journal": "Ultrasound in Medicine & Biology, 49(8), 1824\u20131829"
+    "title": "High-Performance PMN-PT Single-Crystal-Based 1-3 Composite Transducer Integrated with a Biopsy Needle",
+    "year": 2024,
+    "doi": "10.3390/bios14020074",
+    "journal": "Biosensors, 14(2), 74"
   },
   {
     "title": "Using ultrasonic attenuation in cortical bone to infer distributions on pore size",
@@ -44,32 +38,44 @@
   {
     "title": "Detecting pulmonary nodules by using ultrasound multiple scattering",
     "year": 2021,
-    "doi": "10.1121/10.0007283",
+    "doi": "10.1121/10.0007284",
     "journal": "The Journal of the Acoustical Society of America, 150(6), 4095\u20134102"
   },
   {
     "title": "Investigating training-test data splitting strategies for automated segmentation and scoring of COVID-19 lung ultrasound images",
     "year": 2021,
-    "doi": "10.1121/10.0007293",
+    "doi": "10.1121/10.0007279",
     "journal": "The Journal of the Acoustical Society of America, 150(6), 4118\u20134127"
   },
   {
     "title": "In Vivo Assessment of Pulmonary Fibrosis and Pulmonary Edema in Rodents Using Ultrasound Multiple Scattering",
     "year": 2020,
-    "doi": "10.1109/tuffc.2020.2989505",
+    "doi": "10.1109/tuffc.2020.3004481",
     "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(11), 2274\u20132280"
   },
   {
     "title": "Lesion Imaging and Target detection in Multiple Scattering (LITMUS) Media",
     "year": 2020,
-    "doi": "10.1109/tuffc.2020.3013895",
-    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control"
+    "doi": "10.1109/tuffc.2020.3003009",
+    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(11), 2263\u20132273"
   },
   {
     "title": "Ultrasound Enhanced Synthetic Platelet Therapy for Augmented Wound Repair",
     "year": 2020,
-    "doi": "10.1021/acsbiomaterials.0c00222",
+    "doi": "10.1021/acsbiomaterials.0c00185",
     "journal": "ACS Biomaterials Science & Engineering, 6(5), 3026\u20133036"
+  },
+  {
+    "title": "Evaluation of structural anisotropy in a porous titanium medium mimicking trabecular bone structure using mode-converted ultrasonic scattering",
+    "year": 2020,
+    "doi": "10.1109/tuffc.2019.2963162",
+    "journal": "IEEE Transactions on Ultrasonics, Ferroelectrics, and Frequency Control, 67(5), 1017\u20131024"
+  },
+  {
+    "title": "Artificial neural network to estimate micro-architectural properties of cortical bone using ultrasonic attenuation: A 2-D numerical study",
+    "year": 2019,
+    "doi": "10.1016/j.compbiomed.2019.103457",
+    "journal": "Computers in Biology and Medicine, 114, 103457"
   },
   {
     "title": "Acoustic diffusion constant of cortical bone: Numerical simulation study of the effect of pore size and pore density on multiple scattering",
@@ -80,25 +86,85 @@
   {
     "title": "Modeling Ultrasound Attenuation in Porous Structures with Mono-disperse Random Pore Distributions using the Independent Scattering Approximation: A 2D simulation study",
     "year": 2019,
-    "doi": "10.1088/1361-6560/ab47cb",
-    "journal": "Physics in Medicine & Biology"
+    "doi": "10.1088/1361-6560/ab4397",
+    "journal": "Physics in Medicine & Biology, 64(21), 215015"
   },
   {
     "title": "Ultrasound multiple scattering with microbubbles can differentiate between tumor and healthy tissue in vivo",
     "year": 2019,
-    "doi": "10.1088/1361-6560/ab549f",
-    "journal": "Physics in Medicine & Biology, 64(24), 245012"
+    "doi": "10.1088/1361-6560/ab2786",
+    "journal": "Physics in Medicine & Biology, 64(14), 145009"
   },
   {
     "title": "The effect of pore size and density on ultrasonic attenuation in porous structures with mono-disperse random pore distribution: A two-dimensional in-silico study",
     "year": 2018,
-    "doi": "10.1121/1.5049580",
+    "doi": "10.1121/1.5049801",
     "journal": "The Journal of the Acoustical Society of America, 144(2), 709\u2013719"
   },
   {
     "title": "1-Dimensional quantitative micro-architecture mapping of multiple scattering media using backscattering of ultrasound in the near-field: Application to nodule imaging in the lungs",
     "year": 2018,
-    "doi": "10.1063/1.5037130",
+    "doi": "10.1063/1.5034107",
     "journal": "Applied Physics Letters, 113(3), 033704"
+  },
+  {
+    "title": "Study of Poly (N-isopropylacrylamide-co-acrylic acid)(pNIPAM) Microgel Particle Induced Deformations of Tissue-Mimicking Phantom by Ultrasound Stimulation",
+    "year": 2018,
+    "doi": "10.1021/acs.langmuir.7b03650",
+    "journal": "Langmuir, 34(4), 1457\u20131465"
+  },
+  {
+    "title": "Characterization of the lung parenchyma using ultrasound multiple scattering",
+    "year": 2017,
+    "doi": "10.1016/j.ultrasmedbio.2017.01.011",
+    "journal": "Ultrasound in Medicine & Biology, 43(5), 993\u20131003"
+  },
+  {
+    "title": "Assessment of the cervix in pregnant women using shear wave elastography: a feasibility study",
+    "year": 2015,
+    "doi": "10.1016/j.ultrasmedbio.2015.06.020",
+    "journal": "Ultrasound in Medicine & Biology, 41(11), 2789\u20132797"
+  },
+  {
+    "title": "In vivo evaluation of cervical stiffness evolution during induced ripening using shear wave elastography, histology and 2-photon excitation microscopy: insight from an animal model",
+    "year": 2015,
+    "doi": "10.1016/j.ultrasmedbio.2014.12.016",
+    "journal": "Ultrasound in Medicine & Biology, 41(5), 1435\u20131443"
+  },
+  {
+    "title": "Measurements of ultrasound velocity and attenuation in numerical anisotropic porous media compared to Biot's and multiple scattering models",
+    "year": 2014,
+    "doi": "10.1016/j.ultras.2013.10.015",
+    "journal": "Ultrasonics, 54(5), 1146\u20131154"
+  },
+  {
+    "title": "Quantitative viscoelasticity mapping of human liver using supersonic shear imaging: preliminary in vivo feasibility study",
+    "year": 2009,
+    "doi": "10.1016/j.ultrasmedbio.2008.08.018",
+    "journal": "Ultrasound in Medicine & Biology, 35(2), 219\u2013229"
+  },
+  {
+    "title": "Quantitative Assessment of Breast Lesion Viscoelasticity: Initial Clinical Results Using Supersonic Shear Imaging",
+    "year": 2008,
+    "doi": "10.1016/j.ultrasmedbio.2008.02.002",
+    "journal": "Ultrasound in Medicine & Biology, 34(9), 1373\u20131386"
+  },
+  {
+    "title": "Prediction of bone mechanical properties using QUS and pQCT: study of the human distal radius",
+    "year": 2008,
+    "doi": "10.1016/j.medengphy.2007.08.006",
+    "journal": "Medical Engineering & Physics, 30(6), 761\u2013767"
+  },
+  {
+    "title": "Nonlinear ultrasound can detect accumulated damage in human bone",
+    "year": 2008,
+    "doi": "10.1016/j.jbiomech.2007.12.011",
+    "journal": "Journal of Biomechanics, 41(5), 1062\u20131068"
+  },
+  {
+    "title": "Comparison of three ultrasonic axial transmission methods for bone assessment",
+    "year": 2005,
+    "doi": "10.1016/j.ultrasmedbio.2005.01.018",
+    "journal": "Ultrasound in Medicine & Biology, 31(5), 633\u2013642"
   }
 ]
