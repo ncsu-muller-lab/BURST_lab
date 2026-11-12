@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lab Life &amp; Gallery — BURST Lab</title>
+  <meta name="description" content="Group photos, conferences, celebrations, and everyday life at the BURST Lab, NC State MAE." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="index.html">
+        <small>BURST Lab · NC State MAE</small>
+        <b>Biomedical Ultrasound Research for Structural Tissue Characterization</b>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="news.html">News &amp; Updates</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a class="active" href="gallery.html">Lab Life</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <header class="page-header">
+      <div class="wrap">
+        <span class="eyebrow">Archive</span>
+        <h1>Lab Life &amp; Gallery.</h1>
+        <p>Group get-togethers, conference trips, dissertation defenses, and moments outside the acoustic tank.</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="gallery-grid">
+
+          <!-- PHOTO 1 (Featured Group Photo) -->
+          <figure class="gallery-card">
+            <img src="assets/img/lab_photo.webp" alt="BURST Lab Group Photo" loading="lazy" />
+            <figcaption>
+              <span class="gallery-date">Fall 2026</span>
+              <h4>BURST Lab Group Photo</h4>
+              <p>The team gathered at Engineering Building 3 on Centennial Campus.</p>
+            </figcaption>
+          </figure>
+
+          <!-- ADD NEW PHOTOS BELOW BY COPYING THIS BLOCK -->
+          <!--
+          <figure class="gallery-card">
+            <img src="assets/img/your-new-photo.webp" alt="Description" loading="lazy" />
+            <figcaption>
+              <span class="gallery-date">Month Year</span>
+              <h4>Event or Get-Together Title</h4>
+              <p>Short caption about what you were celebrating or doing.</p>
+            </figcaption>
+          </figure>
+          -->
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <h4>BURST Lab</h4>
+          <p>Biomedical Ultrasound Research for Structural Tissue Characterization<br/>
+          Department of Mechanical &amp; Aerospace Engineering<br/>
+          Engineering Building 3, Centennial Campus<br/>
+          North Carolina State University<br/>
+          Raleigh, NC 27695</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Research</a></li>
+            <li><a href="people.html">People</a></li>
+            <li><a href="news.html">News &amp; Updates</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="gallery.html">Lab Life</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>External</h4>
+          <ul>
+            <li><a href="https://orcid.org/0000-0002-5662-0650" target="_blank" rel="noopener">ORCID Profile ↗</a></li>
+            <li><a href="https://scholar.google.com/citations?user=9_iPoNoAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener">Google Scholar ↗</a></li>
+            <li><a href="https://tarheels.live/ultrasonc/" target="_blank" rel="noopener">ULTRASONC ↗</a></li>
+            <li><a href="https://www.mae.ncsu.edu/" target="_blank" rel="noopener">NC State MAE ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 BURST Lab · NC State University</span>
+        <span><a href="https://accessibility.ncsu.edu/" target="_blank" rel="noopener">Accessibility</a> · <a href="https://www.ncsu.edu/privacy/" target="_blank" rel="noopener">Privacy</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.nav-toggle');
+    const links = document.getElementById('nav-links');
+    if (btn && links) {
+      btn.addEventListener('click', () => {
+        const open = links.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open);
+      });
+    }
+  </script>
+</body>
+</html>
