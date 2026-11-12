@@ -133,7 +133,19 @@
     </div>
   </footer>
 
+  <!-- FULLSCREEN PHOTO LIGHTBOX -->
+  <div class="photo-lightbox" id="photo-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lb-close" aria-label="Close fullscreen view">&times;</button>
+    <button class="lightbox-prev" id="lb-prev" aria-label="Previous photo">&#8249;</button>
+    <div class="lightbox-content">
+      <img id="lb-img" src="" alt="" />
+      <div class="lightbox-caption" id="lb-caption"></div>
+    </div>
+    <button class="lightbox-next" id="lb-next" aria-label="Next photo">&#8250;</button>
+  </div>
+
   <script>
+    // Mobile nav toggle
     const btn = document.querySelector('.nav-toggle');
     const links = document.getElementById('nav-links');
     if (btn && links) {
@@ -142,6 +154,77 @@
         btn.setAttribute('aria-expanded', open);
       });
     }
+
+    // Fullscreen Lightbox with Left/Right Arrows & Touch Swipe
+    const lightbox = document.getElementById('photo-lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbCaption = document.getElementById('lb-caption');
+    const cards = Array.from(document.querySelectorAll('.gallery-card'));
+    let currentIndex = 0;
+
+    if (cards.length <= 1) {
+      lightbox.classList.add('single-mode');
+    }
+
+    function openLightbox(index) {
+      currentIndex = (index + cards.length) % cards.length;
+      const card = cards[currentIndex];
+      const img = card.querySelector('img');
+      const title = card.querySelector('h4')?.textContent || '';
+      const desc = card.querySelector('p')?.textContent || '';
+      const date = card.querySelector('.gallery-date')?.textContent || '';
+
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCaption.innerHTML = `<strong>${title}</strong>${desc ? ' — ' + desc : ''}<small>${date} (${currentIndex + 1} of ${cards.length})</small>`;
+
+      lightbox.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    cards.forEach((card, idx) => {
+      card.querySelector('img').addEventListener('click', () => openLightbox(idx));
+    });
+
+    document.getElementById('lb-close').addEventListener('click', closeLightbox);
+    document.getElementById('lb-prev').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openLightbox(currentIndex - 1);
+    });
+    document.getElementById('lb-next').addEventListener('click', (e) => {
+      e.stopPropagation();
+      openLightbox(currentIndex + 1);
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') openLightbox(currentIndex - 1);
+      if (e.key === 'ArrowRight') openLightbox(currentIndex + 1);
+    });
+
+    let touchStartX = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+      const diff = e.changedTouches[0].screenX - touchStartX;
+      if (Math.abs(diff) > 45 && cards.length > 1) {
+        if (diff > 0) openLightbox(currentIndex - 1);
+        else openLightbox(currentIndex + 1);
+      }
+    }, { passive: true });
   </script>
+</body>
 </body>
 </html>
