@@ -290,50 +290,41 @@
     </div>
   </div>
 
+  <!-- FULLSCREEN PHOTO LIGHTBOX (Homepage) -->
+  <div class="photo-lightbox single-mode" id="hero-lightbox" role="dialog" aria-modal="true" aria-label="Full screen lab photo">
+    <button class="lightbox-close" id="hero-lb-close" aria-label="Close fullscreen view">&times;</button>
+    <div class="lightbox-content">
+      <img id="hero-lb-img" src="" alt="" />
+      <div class="lightbox-caption">The BURST Lab team at NC State Centennial Campus.</div>
+    </div>
+  </div>
+
   <script>
-    // Click-to-expand functionality for research items
-    const items = document.querySelectorAll('.research-item');
-    const modal = document.getElementById('researchModal');
-    const closeBtn = document.getElementById('modalClose');
-    const mNum = document.getElementById('modalNum');
-    const mTitle = document.getElementById('modalTitle');
-    const mDesc = document.getElementById('modalDesc');
-    const mImg = document.getElementById('modalImg');
+    const heroPhoto = document.querySelector('.lab-hero-photo img');
+    const heroLightbox = document.getElementById('hero-lightbox');
+    const heroLbImg = document.getElementById('hero-lb-img');
 
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        const num = item.querySelector('.research-num')?.innerText || '';
-        const title = item.querySelector('.research-body h3')?.innerText || '';
-        const desc = item.querySelector('.research-body p')?.innerText || '';
-        const img = item.querySelector('.research-figure img');
-
-        if (img) {
-          mNum.innerText = num;
-          mTitle.innerText = title;
-          mDesc.innerText = desc;
-          mImg.src = img.src;
-          mImg.alt = img.alt || title;
-
-          modal.classList.add('active');
-          modal.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden'; // prevent page background scrolling
-        }
+    if (heroPhoto && heroLightbox) {
+      heroPhoto.addEventListener('click', () => {
+        heroLbImg.src = heroPhoto.src;
+        heroLbImg.alt = heroPhoto.alt;
+        heroLightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
       });
-    });
 
-    function closeModal() {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
+      const closeHeroLb = () => {
+        heroLightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+      };
+
+      document.getElementById('hero-lb-close').addEventListener('click', closeHeroLb);
+      heroLightbox.addEventListener('click', (e) => {
+        if (e.target === heroLightbox) closeHeroLb();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && heroLightbox.classList.contains('is-open')) closeHeroLb();
+      });
     }
-
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
-    });
-  </script>  
+  </script>
 </body>
 </html>
