@@ -788,8 +788,8 @@ p:last-child {
 .page-header p {
   font-size: 1.05rem;
   color: var(--ink-soft);
-  max-width: 65ch;
-  margin-top: 0.75rem;
+  max-width: 100%;
+  margin-top: 0.65rem;
 }
 
 .courses {
